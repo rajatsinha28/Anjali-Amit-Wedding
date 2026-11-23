@@ -1,0 +1,241 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(5rem, 14vw, 8rem) 1rem max(4rem, env(safe-area-inset-bottom));
+  color: var(--ivory-text);
+  background:
+    radial-gradient(circle at 50% 22%, rgb(112 43 67 / 32%), transparent 30%),
+    var(--invitation-royal);
+  text-align: center;
+}
+.portraitRing {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: clamp(250px, 72vw, 285px);
+  aspect-ratio: 1;
+  margin-inline: auto;
+}
+.ringText {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  animation: ringSpin 50s linear infinite;
+  animation-play-state: paused;
+}
+.section[data-ring-active="true"] .ringText {
+  animation-play-state: running;
+}
+.ringText text {
+  fill: var(--foil-gold);
+  font:
+    600 10px/1 "Cormorant Garamond",
+    serif;
+  letter-spacing: 2.2px;
+}
+.photo {
+  width: 74%;
+  aspect-ratio: 1;
+  padding: 6px;
+  overflow: hidden;
+  background: #4b1027;
+  border: 1px solid var(--foil-gold);
+  border-radius: 50%;
+  box-shadow:
+    0 0 26px rgb(242 221 166 / 18%),
+    inset 0 0 0 3px #38101f;
+}
+.photo picture,
+.photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.photo img {
+  object-fit: cover;
+}
+.accessibleDate {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.section h2 {
+  max-width: 25rem;
+  margin: 1.8rem auto 0.8rem;
+  color: var(--gold-light);
+  font:
+    italic 500 clamp(2rem, 9vw, 2.8rem)/1.15 "Cormorant Garamond",
+    serif;
+  text-wrap: balance;
+}
+.blessing {
+  max-width: 22rem;
+  margin: 0 auto 1.5rem;
+  color: var(--muted-ivory);
+  font:
+    400 0.98rem/1.65 "Lora",
+    serif;
+}
+.divider {
+  display: grid;
+  place-items: center;
+  width: 180px;
+  height: 1px;
+  margin: 0 auto 1.4rem;
+  background: linear-gradient(90deg, transparent, var(--foil-gold), transparent);
+}
+.divider i {
+  width: 7px;
+  height: 7px;
+  background: var(--invitation-night);
+  border: 1px solid var(--foil-gold);
+  transform: rotate(45deg);
+}
+.invited {
+  margin: 0 0 0.3rem;
+  color: var(--muted-ivory);
+  font:
+    italic 500 0.9rem/1.3 "Cormorant Garamond",
+    serif;
+}
+.families {
+  margin: 0;
+  color: var(--gold-light);
+  font:
+    600 1.15rem/1.4 "Cormorant Garamond",
+    serif;
+}
+.noteControl {
+  width: min(86vw, 520px);
+  margin: 2rem auto 0;
+  display: grid;
+  justify-items: center;
+  gap: 0.55rem;
+}
+.noteButton {
+  min-height: 48px;
+  width: min(100%, 430px);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  color: #fff4d2;
+  background: linear-gradient(145deg, #6d1732, #431020);
+  border: 1px solid var(--foil-gold);
+  border-radius: 4px;
+  box-shadow:
+    inset 0 0 0 3px #471021,
+    inset 0 0 0 4px rgb(217 183 107 / 42%),
+    0 10px 24px rgb(8 2 7 / 24%);
+  cursor: pointer;
+  font:
+    600 clamp(0.98rem, 3.7vw, 1.08rem)/1.3 "Cormorant Garamond",
+    serif;
+  text-align: center;
+}
+.noteButton:focus-visible {
+  outline: 2px solid #fff1bd;
+  outline-offset: 4px;
+}
+.noteButton > span {
+  color: var(--foil-gold);
+  font-size: 1.05rem;
+}
+.noteButton i {
+  width: 9px;
+  height: 9px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 300ms ease;
+}
+.noteButton[aria-expanded="true"] i {
+  transform: rotate(225deg) translate(-2px, -2px);
+}
+.noteControl small {
+  color: var(--muted-ivory);
+  font:
+    italic 500 0.82rem/1.4 "Cormorant Garamond",
+    serif;
+}
+.letter {
+  width: min(86vw, 520px);
+  margin: 1rem auto 0;
+  color: #2b1a14;
+  background: linear-gradient(145deg, #fbf5e6, #ead8b3);
+  border: 1px solid var(--foil-gold);
+  box-shadow:
+    inset 0 0 0 4px rgb(97 46 31 / 6%),
+    0 14px 30px rgb(8 2 7 / 24%);
+}
+.letter div {
+  padding: 1.25rem clamp(1rem, 5vw, 1.65rem);
+  text-align: left;
+}
+.letter p {
+  margin: 0 0 0.85rem;
+  font:
+    400 0.95rem/1.7 "Lora",
+    serif;
+}
+.letter p:last-child {
+  margin-bottom: 0;
+  color: #681f36;
+  font-weight: 500;
+}
+.section footer {
+  display: grid;
+  gap: 0.25rem;
+  margin-top: 2.4rem;
+  color: var(--muted-ivory);
+}
+.section footer strong {
+  color: var(--gold-light);
+  font:
+    400 2.2rem/1 "Pinyon Script",
+    cursive;
+}
+.section footer span {
+  font:
+    600 0.67rem/1.3 "Cormorant Garamond",
+    serif;
+  letter-spacing: 0.16em;
+}
+.strands span {
+  position: absolute;
+  top: 5rem;
+  width: 1px;
+  height: 160px;
+  background: linear-gradient(var(--foil-gold), transparent);
+}
+.strands span:first-child {
+  left: 7%;
+}
+.strands span:last-child {
+  right: 7%;
+}
+@media (max-width: 350px) {
+  .portraitRing {
+    width: 245px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ringText {
+    animation: none !important;
+  }
+  .noteButton i {
+    transition: none;
+  }
+}
+@keyframes ringSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}

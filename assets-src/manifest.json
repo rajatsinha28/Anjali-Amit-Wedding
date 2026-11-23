@@ -1,0 +1,166 @@
+{
+  "assets": [
+    {
+      "id": "ganesh-idol",
+      "input": "masters/ganesh/ganesh-idol.png",
+      "output": "ganesh/ganesh-idol",
+      "widths": [480, 800, 1600]
+    },
+    {
+      "id": "diya",
+      "input": "masters/ganesh/diya.png",
+      "output": "ganesh/diya",
+      "widths": [160, 320, 600]
+    },
+    {
+      "id": "door-left",
+      "input": "masters/palace/door-left.png",
+      "output": "palace/door-left",
+      "widths": [540, 1080]
+    },
+    {
+      "id": "door-right",
+      "input": "masters/palace/door-right.png",
+      "output": "palace/door-right",
+      "widths": [540, 1080]
+    },
+    {
+      "id": "corner-tl",
+      "input": "masters/florals/corner-tl.png",
+      "output": "florals/corner-tl",
+      "widths": [480, 800, 1200]
+    },
+    {
+      "id": "arch-frame",
+      "input": "masters/palace/arch-frame.png",
+      "output": "palace/arch-frame",
+      "widths": [480, 800, 1200]
+    },
+    {
+      "id": "toran",
+      "input": "masters/florals/toran.png",
+      "output": "florals/toran",
+      "widths": [600, 1200, 1800]
+    },
+    {
+      "id": "petal",
+      "input": "masters/florals/petal.png",
+      "output": "florals/petal",
+      "widths": [120, 240, 480]
+    },
+    {
+      "id": "hero-portrait",
+      "input": "masters/couple/hero-portrait.jpg",
+      "output": "couple/hero-portrait",
+      "widths": [480, 800, 1200, 1600]
+    },
+    {
+      "id": "album-moment-01",
+      "input": "masters/album/moment-01.jpg",
+      "output": "album/moment-01",
+      "widths": [320, 640, 1200]
+    },
+    {
+      "id": "album-moment-02",
+      "input": "masters/album/moment-02.jpg",
+      "output": "album/moment-02",
+      "widths": [320, 640, 1200]
+    },
+    {
+      "id": "album-moment-03",
+      "input": "masters/album/moment-03.jpg",
+      "output": "album/moment-03",
+      "widths": [320, 640, 1200]
+    },
+    {
+      "id": "album-moment-04",
+      "input": "masters/album/moment-04.jpg",
+      "output": "album/moment-04",
+      "widths": [320, 640, 1200]
+    },
+    {
+      "id": "album-moment-05",
+      "input": "masters/album/moment-05.jpg",
+      "output": "album/moment-05",
+      "widths": [320, 640, 1200]
+    },
+    {
+      "id": "album-final-mountain",
+      "input": "masters/album/final-mountain.jpg",
+      "output": "album/final-mountain",
+      "widths": [320, 640, 1200]
+    },
+    {
+      "id": "album-final-evening",
+      "input": "masters/album/final-evening.jpg",
+      "output": "album/final-evening",
+      "widths": [320, 640, 1200]
+    },
+    {
+      "id": "album-final-cake",
+      "input": "masters/album/final-cake.jpg",
+      "output": "album/final-cake",
+      "widths": [320, 640, 1200]
+    },
+    {
+      "id": "album-final-celebration",
+      "input": "masters/album/final-celebration.jpg",
+      "output": "album/final-celebration",
+      "widths": [320, 640, 1200]
+    },
+    {
+      "id": "album-final-dance",
+      "input": "masters/album/final-dance.jpg",
+      "output": "album/final-dance",
+      "widths": [320, 640, 1200]
+    },
+    {
+      "id": "album-final-formal",
+      "input": "masters/album/final-formal.jpg",
+      "output": "album/final-formal",
+      "widths": [320, 640, 1200]
+    },
+    {
+      "id": "portrait-jharokha",
+      "input": "masters/palace/portrait-jharokha.png",
+      "output": "palace/portrait-jharokha",
+      "widths": [480, 800, 1200]
+    },
+    {
+      "id": "hero-side-string",
+      "input": "masters/florals/hero-side-string.png",
+      "output": "florals/hero-side-string",
+      "widths": [160, 240, 400]
+    },
+    {
+      "id": "ceremony-haldi",
+      "input": "masters/ceremonies/haldi.png",
+      "output": "ceremonies/haldi",
+      "widths": [320, 640, 1200]
+    },
+    {
+      "id": "ceremony-mehendi-sangeet",
+      "input": "masters/ceremonies/mehendi-sangeet.png",
+      "output": "ceremonies/mehendi-sangeet",
+      "widths": [320, 640, 1200]
+    },
+    {
+      "id": "ceremony-wedding-mandap",
+      "input": "masters/ceremonies/wedding-mandap.png",
+      "output": "ceremonies/wedding-mandap",
+      "widths": [320, 640, 1200]
+    },
+    {
+      "id": "royal-scroll-roller",
+      "input": "masters/scroll/royal-roller.png",
+      "output": "scroll/royal-roller",
+      "widths": [480, 800, 1200]
+    },
+    {
+      "id": "royal-farman-border",
+      "input": "masters/scroll/farman-border.png",
+      "output": "scroll/royal-farman-border",
+      "widths": [480, 800, 1024]
+    }
+  ]
+}

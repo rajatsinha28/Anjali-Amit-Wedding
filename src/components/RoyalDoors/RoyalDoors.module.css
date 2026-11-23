@@ -1,0 +1,160 @@
+.doors {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  contain: paint;
+}
+
+.panel {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  will-change: auto;
+}
+
+.panel::after {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  content: "";
+  background: rgb(90 18 36 / 55%);
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.left .image img {
+  object-position: right center;
+}
+
+.right .image img {
+  object-position: left center;
+}
+
+.seam {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: rgb(235 217 168 / 42%);
+  box-shadow: 0 0 12px rgb(201 162 74 / 35%);
+  opacity: 0;
+  transform: scaleY(0);
+}
+
+.bloom {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  width: 34vmin;
+  aspect-ratio: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    circle,
+    rgb(255 231 160 / 92%),
+    rgb(246 176 30 / 28%) 42%,
+    transparent 72%
+  );
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.2);
+}
+
+.opening .panel {
+  will-change: transform;
+}
+
+.opening .left {
+  animation: doorLeft 1700ms 750ms var(--ease-door) forwards;
+}
+
+.opening .right {
+  animation: doorRight 1700ms 750ms var(--ease-door) forwards;
+}
+
+.opening .seam {
+  animation: seamLight 2000ms 350ms ease-out forwards;
+}
+
+.opening .bloom {
+  animation: bloom 1700ms 750ms var(--ease-soft) forwards;
+}
+
+@keyframes doorLeft {
+  to {
+    transform: translate3d(-102%, 0, 0) scale(1.02);
+  }
+}
+
+@keyframes doorRight {
+  to {
+    transform: translate3d(102%, 0, 0) scale(1.02);
+  }
+}
+
+@keyframes seamLight {
+  0% {
+    width: 1px;
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  28% {
+    width: 3px;
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  58% {
+    width: 6px;
+    opacity: 0.72;
+    transform: translateX(-50%) scaleY(1);
+  }
+  100% {
+    width: 1px;
+    opacity: 0;
+    transform: translateX(-50%) scaleY(0.92);
+  }
+}
+
+@keyframes bloom {
+  0% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2.2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .opening .left,
+  .opening .right {
+    animation: doorCrossfade 450ms forwards;
+  }
+
+  .opening .seam,
+  .opening .bloom {
+    animation: none;
+  }
+}
+
+@keyframes doorCrossfade {
+  to {
+    opacity: 0;
+  }
+}

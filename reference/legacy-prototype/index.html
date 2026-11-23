@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0d4b3a" />
+    <meta name="description" content="The wedding invitation of Amit and Anjali" />
+    <title>Amit &amp; Anjali — Wedding Invitation</title>
+
+    <link rel="preload" href="/assets/hero-watercolor.webp" as="image" type="image/webp" />
+    <link rel="preload" href="/assets/ganesh-cover.webp" as="image" type="image/webp" />
+    <link rel="preload" href="/assets/fonts/GreatVibes-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/assets/fonts/CormorantGaramond-Italic.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/assets/fonts/TiroDevanagariSanskrit-Regular.ttf" as="font" type="font/ttf" crossorigin />
+  </head>
+  <body>
+    <main class="invitation-shell" id="invitation">
+      <section class="hero-stage" id="hero" aria-label="Wedding invitation for Amit and Anjali">
+        <div class="paper-base" aria-hidden="true"></div>
+
+        <svg class="illustration" viewBox="0 0 540 960" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <filter id="organicEdge" x="-20%" y="-20%" width="140%" height="140%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.014 0.025" numOctaves="3" seed="17" result="noise" />
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="24" xChannelSelector="R" yChannelSelector="B" />
+              <feGaussianBlur stdDeviation="2.4" />
+            </filter>
+            <mask id="watercolorMask" maskUnits="userSpaceOnUse">
+              <rect width="540" height="960" fill="black" />
+              <g class="ink-blob ink-blob--bottom" filter="url(#organicEdge)">
+                <ellipse cx="270" cy="830" rx="275" ry="250" fill="white" />
+              </g>
+              <g class="ink-blob ink-blob--left" filter="url(#organicEdge)">
+                <ellipse cx="52" cy="470" rx="235" ry="360" fill="white" />
+              </g>
+              <g class="ink-blob ink-blob--right" filter="url(#organicEdge)">
+                <ellipse cx="500" cy="390" rx="225" ry="345" fill="white" />
+              </g>
+              <g class="ink-blob ink-blob--centre" filter="url(#organicEdge)">
+                <ellipse cx="275" cy="430" rx="240" ry="330" fill="white" />
+              </g>
+            </mask>
+          </defs>
+          <g class="scene-ken-burns">
+            <image
+              class="scene-image"
+              href="/assets/hero-watercolor.webp"
+              width="540"
+              height="960"
+              preserveAspectRatio="xMidYMid slice"
+              mask="url(#watercolorMask)"
+            />
+          </g>
+        </svg>
+
+        <svg class="ornaments" viewBox="0 0 540 960" preserveAspectRatio="none" aria-hidden="true">
+          <g class="corner-floral corner-floral--left">
+            <path d="M8 206 C24 138 54 82 121 27" />
+            <path d="M31 145 C54 151 70 138 72 114 C48 108 34 120 31 145Z" />
+            <path d="M61 96 C81 102 98 90 101 68 C78 61 64 74 61 96Z" />
+            <path d="M16 178 C34 182 48 171 49 153 C29 148 18 159 16 178Z" />
+          </g>
+          <g class="corner-floral corner-floral--right">
+            <path d="M532 206 C516 138 486 82 419 27" />
+            <path d="M509 145 C486 151 470 138 468 114 C492 108 506 120 509 145Z" />
+            <path d="M479 96 C459 102 442 90 439 68 C462 61 476 74 479 96Z" />
+            <path d="M524 178 C506 182 492 171 491 153 C511 148 522 159 524 178Z" />
+          </g>
+          <g class="chandelier chandelier--left">
+            <path d="M108 0 V76 M79 91 Q108 56 137 91 M84 91 H132 M93 91 L99 113 H117 L123 91" />
+            <circle cx="108" cy="119" r="4" />
+          </g>
+          <g class="chandelier chandelier--right">
+            <path d="M432 0 V76 M403 91 Q432 56 461 91 M408 91 H456 M417 91 L423 113 H441 L447 91" />
+            <circle cx="432" cy="119" r="4" />
+          </g>
+          <g class="floral-toran">
+            <path class="toran-stem" d="M154 143 C198 155 222 181 270 184 C318 181 342 155 386 143" />
+            <path class="toran-thread" d="M270 184 V203" />
+            <path class="toran-drop" d="M258 205 Q270 188 282 205 Q270 222 258 205Z" />
+            <path class="toran-leaf" d="M180 151 Q193 139 203 154 Q190 164 180 151Z" />
+            <path class="toran-leaf" d="M216 169 Q229 153 240 172 Q225 181 216 169Z" />
+            <path class="toran-leaf" d="M360 151 Q347 139 337 154 Q350 164 360 151Z" />
+            <path class="toran-leaf" d="M324 169 Q311 153 300 172 Q315 181 324 169Z" />
+            <circle cx="154" cy="143" r="3" />
+            <circle cx="386" cy="143" r="3" />
+          </g>
+        </svg>
+
+        <div class="petal-field" id="petalField" aria-hidden="true"></div>
+        <div class="text-veil" aria-hidden="true"></div>
+
+        <div class="hero-copy">
+          <p class="welcome" data-copy="welcomeLine" data-reveal="welcome"></p>
+
+          <section class="person-block person-block--bride" aria-label="Bride">
+            <div class="name-window" data-reveal="bride">
+              <h1 class="couple-name" data-copy="brideName"></h1>
+            </div>
+            <div class="details" data-copy-list="brideDetails"></div>
+          </section>
+
+          <div class="ampersand" data-reveal="ampersand">&amp;</div>
+
+          <section class="person-block person-block--groom" aria-label="Groom">
+            <div class="name-window" data-reveal="groom">
+              <h2 class="couple-name" data-copy="groomName"></h2>
+            </div>
+            <div class="details" data-copy-list="groomDetails"></div>
+          </section>
+        </div>
+
+        <div class="scroll-cue" data-reveal="scroll" aria-hidden="true">
+          <span>SCROLL TO DISCOVER</span>
+          <svg viewBox="0 0 18 18"><path d="m4 7 5 5 5-5" /></svg>
+        </div>
+
+        <div class="hero-ui" aria-label="Invitation controls">
+          <button class="glass-button replay-button" id="replayButton" type="button" aria-label="Replay invitation animation">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v6h6M5.7 15a7 7 0 1 0 .3-7" /></svg>
+            <span>Replay</span>
+          </button>
+          <button class="glass-button sound-button" id="soundButton" type="button" aria-label="Play music" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9H5Z M17 9c1.4 1.8 1.4 4.2 0 6" /></svg>
+          </button>
+        </div>
+
+        <section class="cover-screen" id="coverScreen" aria-label="Open the wedding invitation">
+          <div class="cover-panel cover-panel--top" aria-hidden="true">
+            <div class="cover-surface">
+              <img src="/assets/ganesh-cover.webp" alt="" />
+              <div class="cover-shloka">
+                <span>वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।</span>
+                <span>निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥</span>
+              </div>
+            </div>
+          </div>
+          <div class="cover-panel cover-panel--bottom" aria-hidden="true">
+            <div class="cover-surface">
+              <img src="/assets/ganesh-cover.webp" alt="" />
+              <div class="cover-shloka">
+                <span>वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।</span>
+                <span>निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="ganesh-hit" id="ganeshButton" type="button" aria-label="Open Amit and Anjali's wedding invitation">
+            <span class="sr-only">Tap the Ganesh symbol to open the invitation</span>
+          </button>
+          <button class="open-button" id="openButton" type="button">
+            <span class="open-button__spark" aria-hidden="true">✦</span>
+            Tap to open
+          </button>
+        </section>
+      </section>
+
+      <section class="date-reveal-section" id="wedding-date" aria-label="Wedding date reveal">
+        <div class="date-paper" aria-hidden="true"></div>
+
+        <svg class="date-botanical date-botanical--left" viewBox="0 0 150 310" aria-hidden="true">
+          <path d="M12 302 C20 232 42 174 103 82 C118 59 130 34 137 8" />
+          <path d="M35 229 C57 238 75 224 75 201 C52 194 38 207 35 229Z" />
+          <path d="M61 170 C83 177 99 163 98 140 C75 135 62 148 61 170Z" />
+          <path d="M94 105 C114 111 128 98 126 78 C106 74 95 86 94 105Z" />
+        </svg>
+        <svg class="date-botanical date-botanical--right" viewBox="0 0 150 310" aria-hidden="true">
+          <path d="M138 302 C130 232 108 174 47 82 C32 59 20 34 13 8" />
+          <path d="M115 229 C93 238 75 224 75 201 C98 194 112 207 115 229Z" />
+          <path d="M89 170 C67 177 51 163 52 140 C75 135 88 148 89 170Z" />
+          <path d="M56 105 C36 111 22 98 24 78 C44 74 55 86 56 105Z" />
+        </svg>
+
+        <div class="date-reveal-inner">
+          <p class="date-eyebrow">THE AUSPICIOUS DAY</p>
+
+          <svg class="date-lotus" viewBox="0 0 220 120" aria-hidden="true">
+            <path class="lotus-stem" d="M24 101 C57 85 73 86 110 103 C147 86 163 85 196 101" />
+            <path class="lotus-leaf" d="M25 100 Q48 71 76 91 Q55 112 25 100Z" />
+            <path class="lotus-leaf" d="M195 100 Q172 71 144 91 Q165 112 195 100Z" />
+            <path class="lotus-petal lotus-petal--outer" d="M110 98 Q64 78 68 43 Q98 49 110 79 Q122 49 152 43 Q156 78 110 98Z" />
+            <path class="lotus-petal lotus-petal--middle" d="M110 94 Q82 65 96 31 Q110 43 110 70 Q110 43 124 31 Q138 65 110 94Z" />
+            <path class="lotus-petal lotus-petal--centre" d="M110 81 Q94 51 110 16 Q126 51 110 81Z" />
+            <circle cx="42" cy="76" r="4" /><circle cx="178" cy="76" r="4" />
+            <path class="lotus-bud" d="M42 72 Q32 58 42 47 Q52 58 42 72Z" />
+            <path class="lotus-bud" d="M178 72 Q168 58 178 47 Q188 58 178 72Z" />
+          </svg>
+
+          <div class="date-tableau">
+            <div class="royal-elephant royal-elephant--left" aria-hidden="true">
+              <svg viewBox="0 0 190 220">
+                <g class="elephant-core">
+                  <ellipse class="elephant-body" cx="78" cy="119" rx="57" ry="45" />
+                  <path class="elephant-back" d="M28 106 Q74 67 126 91" />
+                  <path class="elephant-leg" d="M40 143 L39 194 Q49 202 58 194 L61 150Z" />
+                  <path class="elephant-leg" d="M91 151 L95 195 Q106 203 115 194 L112 145Z" />
+                  <path class="elephant-foot" d="M37 194 Q49 188 60 194" />
+                  <path class="elephant-foot" d="M93 194 Q104 188 117 194" />
+                  <ellipse class="elephant-head" cx="132" cy="115" rx="33" ry="38" />
+                  <g class="elephant-ear">
+                    <path d="M112 97 Q84 92 90 131 Q103 145 120 126Z" />
+                    <path class="ear-detail" d="M108 104 Q96 107 98 126" />
+                  </g>
+                  <circle class="elephant-eye" cx="143" cy="107" r="2.4" />
+                  <path class="elephant-tusk" d="M150 124 Q166 131 170 118 Q164 142 148 139Z" />
+                  <g class="elephant-trunk">
+                    <path class="trunk-main" d="M157 116 C168 132 159 151 163 166 C166 176 176 180 181 171" />
+                    <path class="trunk-detail" d="M161 129 C166 142 161 153 166 164" />
+                  </g>
+                  <path class="elephant-tail" d="M23 116 Q8 134 18 151" />
+                  <circle class="tail-bell" cx="18" cy="154" r="3" />
+
+                  <g class="elephant-cloth">
+                    <path d="M48 77 Q79 64 109 78 L111 131 Q80 145 46 128Z" />
+                    <path class="cloth-border" d="M48 113 Q80 127 111 114" />
+                    <circle cx="64" cy="94" r="4" /><circle cx="80" cy="98" r="4" /><circle cx="96" cy="94" r="4" />
+                    <path d="M62 119 l5 7 5-7 5 7 5-7 5 7 5-7" />
+                  </g>
+                  <g class="elephant-howdah">
+                    <path d="M59 68 V45 H99 V68" />
+                    <path d="M53 45 Q79 17 105 45Z" />
+                    <path d="M49 69 H109" />
+                    <path d="M66 45 V68 M92 45 V68" />
+                    <circle cx="79" cy="24" r="3" />
+                  </g>
+                  <g class="elephant-jewels">
+                    <path d="M121 86 Q144 72 159 92" />
+                    <circle cx="128" cy="84" r="2.6" /><circle cx="139" cy="81" r="2.6" /><circle cx="150" cy="85" r="2.6" />
+                    <path d="M126 145 Q139 152 151 143" />
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <div class="date-display" id="wedding-date-display" aria-label="Wedding date concealed">
+              <div class="date-compartment" data-date-part="day">
+                <span class="date-label">DAY</span>
+                <span class="date-placeholder" aria-hidden="true">••</span>
+                <span class="date-value" aria-hidden="true">10</span>
+              </div>
+              <div class="date-compartment date-compartment--month" data-date-part="month">
+                <span class="date-label">MONTH</span>
+                <span class="date-placeholder" aria-hidden="true">••••</span>
+                <span class="date-value" aria-hidden="true">DECEMBER</span>
+              </div>
+              <div class="date-compartment" data-date-part="year">
+                <span class="date-label">YEAR</span>
+                <span class="date-placeholder" aria-hidden="true">••••</span>
+                <span class="date-value" aria-hidden="true">2026</span>
+              </div>
+            </div>
+
+            <div class="royal-elephant royal-elephant--right" aria-hidden="true">
+              <svg viewBox="0 0 190 220">
+                <g class="elephant-core">
+                  <ellipse class="elephant-body" cx="78" cy="119" rx="57" ry="45" />
+                  <path class="elephant-back" d="M28 106 Q74 67 126 91" />
+                  <path class="elephant-leg" d="M40 143 L39 194 Q49 202 58 194 L61 150Z" />
+                  <path class="elephant-leg" d="M91 151 L95 195 Q106 203 115 194 L112 145Z" />
+                  <path class="elephant-foot" d="M37 194 Q49 188 60 194" />
+                  <path class="elephant-foot" d="M93 194 Q104 188 117 194" />
+                  <ellipse class="elephant-head" cx="132" cy="115" rx="33" ry="38" />
+                  <g class="elephant-ear">
+                    <path d="M112 97 Q84 92 90 131 Q103 145 120 126Z" />
+                    <path class="ear-detail" d="M108 104 Q96 107 98 126" />
+                  </g>
+                  <circle class="elephant-eye" cx="143" cy="107" r="2.4" />
+                  <path class="elephant-tusk" d="M150 124 Q166 131 170 118 Q164 142 148 139Z" />
+                  <g class="elephant-trunk">
+                    <path class="trunk-main" d="M157 116 C168 132 159 151 163 166 C166 176 176 180 181 171" />
+                    <path class="trunk-detail" d="M161 129 C166 142 161 153 166 164" />
+                  </g>
+                  <path class="elephant-tail" d="M23 116 Q8 134 18 151" />
+                  <circle class="tail-bell" cx="18" cy="154" r="3" />
+
+                  <g class="elephant-cloth">
+                    <path d="M48 77 Q79 64 109 78 L111 131 Q80 145 46 128Z" />
+                    <path class="cloth-border" d="M48 113 Q80 127 111 114" />
+                    <circle cx="64" cy="94" r="4" /><circle cx="80" cy="98" r="4" /><circle cx="96" cy="94" r="4" />
+                    <path d="M62 119 l5 7 5-7 5 7 5-7 5 7 5-7" />
+                  </g>
+                  <g class="elephant-howdah">
+                    <path d="M59 68 V45 H99 V68" />
+                    <path d="M53 45 Q79 17 105 45Z" />
+                    <path d="M49 69 H109" />
+                    <path d="M66 45 V68 M92 45 V68" />
+                    <circle cx="79" cy="24" r="3" />
+                  </g>
+                  <g class="elephant-jewels">
+                    <path d="M121 86 Q144 72 159 92" />
+                    <circle cx="128" cy="84" r="2.6" /><circle cx="139" cy="81" r="2.6" /><circle cx="150" cy="85" r="2.6" />
+                    <path d="M126 145 Q139 152 151 143" />
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <div class="blessing-particles" aria-hidden="true"></div>
+            <div class="date-blessing-slot">
+              <p class="date-blessing-note">With joyful hearts, we await your blessings on our special day.</p>
+            </div>
+          </div>
+
+          <button class="date-reveal-button" type="button" aria-controls="wedding-date-display" aria-expanded="false">
+            <span class="button-flourish" aria-hidden="true">✦</span>
+            <span class="date-reveal-button__label">REVEAL THE DATE</span>
+            <span class="button-flourish" aria-hidden="true">✦</span>
+          </button>
+          <p class="date-announcement sr-only" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+
+    <audio id="weddingAudio" preload="none"></audio>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

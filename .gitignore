@@ -1,0 +1,12 @@
+node_modules/
+dist/
+playwright-report/
+test-results/
+coverage/
+.vite/
+*.log
+public/assets/*
+!public/assets/.gitkeep
+!public/assets/manifest.json
+!public/assets/audio/
+!public/assets/audio/*.mp3

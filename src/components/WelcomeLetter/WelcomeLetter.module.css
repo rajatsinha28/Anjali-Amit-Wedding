@@ -1,0 +1,160 @@
+.section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(4rem, 10vw, 6.25rem) 0 clamp(4rem, 9vw, 5.5rem);
+  color: #fff1d0;
+  background:
+    radial-gradient(circle at 50% 34%, rgb(150 44 75 / 24%), transparent 46%),
+    var(--invitation-royal);
+  scroll-margin-top: 2rem;
+}
+.stage {
+  position: relative;
+  width: min(88vw, 560px);
+  margin-inline: auto;
+}
+.scroll {
+  --scroll-metal: #a77a31;
+  --scroll-metal-light: #f1d58a;
+}
+.panel {
+  position: relative;
+  min-height: clamp(720px, 182vw, 840px);
+  padding: clamp(4.65rem, 15vw, 6.1rem) clamp(1.55rem, 7vw, 3.6rem) clamp(4.5rem, 14vw, 5.8rem);
+  overflow: hidden;
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 16%, rgb(174 74 101 / 34%), transparent 34%),
+    radial-gradient(circle at 50% 86%, rgb(34 3 17 / 34%), transparent 44%),
+    repeating-linear-gradient(91deg, rgb(255 220 153 / 2%) 0 1px, transparent 1px 7px),
+    linear-gradient(155deg, #5c0c29, #3b061b 62%, #260311);
+  border: 1px solid rgb(210 162 76 / 66%);
+  box-shadow:
+    inset 0 0 58px rgb(8 0 4 / 48%),
+    0 28px 58px rgb(5 1 4 / 34%);
+}
+.panel::after {
+  position: absolute;
+  inset: 1.1rem;
+  z-index: 0;
+  pointer-events: none;
+  content: "";
+  border: 1px solid rgb(225 184 96 / 34%);
+  border-radius: 38% 38% 5% 5% / 10% 10% 3% 3%;
+  box-shadow: inset 0 0 0 4px rgb(59 5 25 / 68%);
+}
+.borderArt {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  object-fit: fill;
+  opacity: 0.92;
+}
+.content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  align-content: center;
+  min-height: calc(clamp(720px, 182vw, 840px) - 9rem);
+}
+.crest {
+  color: #e6bd63;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  line-height: 1;
+  text-shadow: 0 0 16px rgb(235 190 94 / 32%);
+}
+.heading {
+  margin: 0.65rem auto 0.9rem;
+  max-width: 22rem;
+  color: #f7d98d;
+  font:
+    400 clamp(1.78rem, 7vw, 2.45rem) / 1.42 "Tiro Devanagari Sanskrit",
+    "Noto Serif Devanagari",
+    serif;
+  text-wrap: balance;
+  text-shadow: 0 2px 12px rgb(10 0 4 / 55%);
+}
+.ornament {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.55rem;
+  width: min(72%, 230px);
+  margin: 0 auto 1.55rem;
+  color: #d5a94f;
+}
+.ornament span {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, currentColor);
+}
+.ornament span:last-child {
+  background: linear-gradient(90deg, currentColor, transparent);
+}
+.ornament i {
+  font-size: 0.48rem;
+  font-style: normal;
+}
+.letter {
+  display: grid;
+  gap: 1.15rem;
+  max-width: 25rem;
+  margin-inline: auto;
+}
+.letter p {
+  margin: 0;
+  color: #fff3db;
+  font:
+    400 clamp(1.06rem, 4.15vw, 1.23rem) / 1.82 "Noto Serif Devanagari",
+    "Tiro Devanagari Sanskrit",
+    serif;
+  text-wrap: pretty;
+}
+.letter strong {
+  color: #f6d47d;
+  font-weight: 600;
+  text-shadow: 0 0 13px rgb(233 184 76 / 24%);
+}
+.signoff {
+  display: grid;
+  gap: 0.28rem;
+  margin-top: 1.55rem;
+  color: #f9e5bd;
+  font:
+    400 clamp(1rem, 3.8vw, 1.14rem) / 1.65 "Noto Serif Devanagari",
+    serif;
+}
+.signoff em {
+  color: #e9c774;
+  font-style: normal;
+}
+.signoff strong {
+  color: #f7d98d;
+  font:
+    600 clamp(1.22rem, 5vw, 1.55rem) / 1.55 "Noto Serif Devanagari",
+    serif;
+}
+@media (max-width: 350px) {
+  .stage {
+    width: 90vw;
+  }
+  .panel {
+    min-height: 760px;
+    padding-inline: 1.35rem;
+  }
+  .content {
+    min-height: 650px;
+  }
+  .letter p {
+    font-size: 1.0625rem;
+    line-height: 1.76;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .section * {
+    scroll-behavior: auto;
+  }
+}

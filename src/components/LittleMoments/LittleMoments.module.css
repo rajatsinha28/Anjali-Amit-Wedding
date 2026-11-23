@@ -1,0 +1,583 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(4rem, 12vw, 7rem) clamp(0.5rem, 3vw, 1rem);
+  color: var(--ivory-text);
+  background:
+    radial-gradient(circle at 50% 44%, rgb(112 46 69 / 24%), transparent 38%),
+    var(--invitation-royal);
+  text-align: center;
+}
+.section h2 {
+  margin: 0;
+  color: var(--gold-light);
+  font:
+    italic 500 clamp(2.2rem, 10vw, 3rem)/1.1 "Cormorant Garamond",
+    serif;
+}
+.subtitle {
+  margin: 0.65rem auto 2rem;
+  color: var(--muted-ivory);
+  font:
+    400 clamp(0.9rem, 2.7vw, 1rem)/1.5 "Lora",
+    serif;
+}
+.stage {
+  --album-aspect: 1.52;
+  position: relative;
+  width: min(94vw, 760px);
+  aspect-ratio: var(--album-aspect);
+  margin-inline: auto;
+  perspective: 1600px;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+.stage:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 5px;
+}
+.book {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 18px 25px rgb(4 1 3 / 42%));
+}
+.paperEdges {
+  position: absolute;
+  inset: 1.7% 0.8% 0.2% 1.4%;
+  z-index: 0;
+  border: clamp(4px, 1.1vw, 10px) solid #5a1224;
+  border-radius: clamp(5px, 1.2vw, 10px);
+  background: repeating-linear-gradient(0deg, #ead8ae 0 1px, #c7ad77 1px 2px, #f8edcf 2px 4px);
+  box-shadow:
+    inset 0 0 0 1px #d7b45e,
+    0 3px 0 #2c0917,
+    0 7px 0 #14050d;
+}
+.pages {
+  position: absolute;
+  inset: clamp(7px, 1.8vw, 14px);
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  color: #422820;
+  background: #f3e5c3;
+  border: 1px solid #c9a24a;
+  border-radius: 2px;
+  transform-style: preserve-3d;
+}
+.pages::after {
+  position: absolute;
+  inset: 0 auto 0 50%;
+  z-index: 5;
+  width: clamp(10px, 2vw, 20px);
+  content: "";
+  background: linear-gradient(
+    90deg,
+    rgb(66 40 32 / 24%),
+    rgb(66 40 32 / 4%) 44%,
+    rgb(255 249 230 / 28%) 52%,
+    rgb(66 40 32 / 20%)
+  );
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.leaf {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 0;
+  padding: clamp(4px, 1.2vw, 12px) clamp(5px, 1.8vw, 18px);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 15%, rgb(255 255 255 / 45%) 0 1px, transparent 1.5px),
+    repeating-linear-gradient(94deg, transparent 0 12px, rgb(124 86 45 / 3%) 13px 14px),
+    radial-gradient(circle at 50% 32%, #fbf5e6, #f3e5c3 68%, #e5d2a5);
+  box-shadow: inset 0 0 clamp(7px, 1.5vw, 18px) rgb(104 66 34 / 16%);
+}
+.left {
+  border-right: 1px solid rgb(95 49 34 / 16%);
+}
+.corner {
+  position: absolute;
+  inset: clamp(4px, 1vw, 10px);
+  border: 1px solid rgb(154 118 43 / 56%);
+  pointer-events: none;
+}
+.corner::before,
+.corner::after {
+  position: absolute;
+  width: clamp(12px, 3vw, 28px);
+  height: clamp(12px, 3vw, 28px);
+  content: "";
+  border-color: #b28c3e;
+  border-style: solid;
+  opacity: 0.75;
+}
+.corner::before {
+  top: 3px;
+  left: 3px;
+  border-width: 1px 0 0 1px;
+  border-radius: 100% 0 0;
+}
+.corner::after {
+  right: 3px;
+  bottom: 3px;
+  border-width: 0 1px 1px 0;
+  border-radius: 0 0 100%;
+}
+.photoMount {
+  position: relative;
+  width: 88%;
+  max-width: 90%;
+  height: auto;
+  max-height: 92%;
+  aspect-ratio: 3/4;
+  padding: clamp(3px, 0.7vw, 8px);
+  background: #fffaf0;
+  box-shadow: 0 clamp(3px, 0.8vw, 8px) clamp(6px, 1.7vw, 16px) rgb(65 32 22 / 26%);
+  transform-origin: 50% 55%;
+}
+.photoMount picture,
+.photoMount img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.photoMount img {
+  object-fit: cover;
+}
+.turningSheet {
+  position: absolute;
+  top: clamp(7px, 1.8vw, 14px);
+  bottom: clamp(7px, 1.8vw, 14px);
+  z-index: 12;
+  width: calc(50% - clamp(7px, 1.8vw, 14px));
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.forward {
+  left: 50%;
+  transform-origin: left center;
+}
+.backward {
+  left: clamp(7px, 1.8vw, 14px);
+  transform-origin: right center;
+}
+.sheetFace {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+.sheetFace .leaf {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+.sheetBack {
+  transform: rotateY(180deg);
+}
+.paperHighlight {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  opacity: 0;
+  background: linear-gradient(90deg, transparent 8%, rgb(255 252 234 / 62%) 50%, transparent 92%);
+  pointer-events: none;
+  backface-visibility: hidden;
+}
+.movingShadow {
+  position: absolute;
+  top: 4%;
+  bottom: 4%;
+  left: 48%;
+  z-index: 9;
+  width: 15%;
+  opacity: 0;
+  background: linear-gradient(90deg, rgb(31 10 17 / 58%), transparent);
+  filter: blur(3px);
+  transform-origin: left;
+  pointer-events: none;
+}
+.cover {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: clamp(0.22rem, 0.9vw, 0.58rem);
+  padding: clamp(1rem, 3vw, 2rem);
+  overflow: hidden;
+  color: var(--gold-light);
+  background:
+    radial-gradient(ellipse at 50% 43%, rgb(164 61 91 / 34%), transparent 34%),
+    radial-gradient(circle at 50% 50%, transparent 42%, rgb(18 3 10 / 28%) 100%),
+    linear-gradient(100deg, #260713 0%, #4a1027 4%, #711e3b 7%, #4c1028 38%, #350a1c 100%);
+  border: clamp(6px, 1.4vw, 12px) solid #3b0b1e;
+  border-radius: clamp(5px, 1.4vw, 11px);
+  box-shadow:
+    inset 0 0 0 1px #f0d790,
+    inset 0 0 0 3px #7b5523,
+    inset 0 0 0 clamp(8px, 1.6vw, 15px) #3f0c21,
+    inset 0 0 0 calc(clamp(8px, 1.6vw, 15px) + 1px) rgb(226 194 116 / 72%),
+    inset 0 0 46px rgb(10 1 6 / 42%);
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+.cover::before {
+  position: absolute;
+  inset: clamp(15px, 3vw, 26px);
+  content: "";
+  pointer-events: none;
+  border: 1px solid rgb(231 198 119 / 42%);
+  background:
+    linear-gradient(135deg, rgb(241 214 149 / 8%) 0 1px, transparent 1px 14px),
+    radial-gradient(
+      circle at 50% 50%,
+      transparent 0 58%,
+      rgb(232 197 119 / 4%) 59% 60%,
+      transparent 61%
+    );
+  box-shadow: inset 0 0 0 4px rgb(47 7 23 / 72%);
+}
+
+.cover::after {
+  position: absolute;
+  z-index: 8;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(108deg, transparent 38%, rgb(255 237 181 / 18%) 49%, transparent 60%);
+  transform: translateX(-120%);
+  animation: coverFoilSweep 7s 1.8s ease-in-out infinite;
+}
+
+.coverTexture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.28;
+  background-image:
+    radial-gradient(rgb(255 235 184 / 24%) 0.45px, transparent 0.6px),
+    repeating-linear-gradient(92deg, transparent 0 7px, rgb(255 255 255 / 2%) 8px 9px);
+  background-size:
+    7px 7px,
+    auto;
+  mix-blend-mode: soft-light;
+}
+
+.coverFlourish {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: clamp(28px, 9vw, 74px) auto clamp(28px, 9vw, 74px);
+  align-items: center;
+  gap: clamp(0.35rem, 1.3vw, 0.7rem);
+  width: min(52%, 250px);
+  color: #d9b86b;
+  opacity: 0.82;
+}
+
+.coverFlourish i {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, currentColor);
+}
+
+.coverFlourish i:last-child {
+  background: linear-gradient(90deg, currentColor, transparent);
+}
+
+.coverFlourish b {
+  font-size: clamp(0.38rem, 1.2vw, 0.62rem);
+  font-weight: 400;
+}
+
+.flourishTop {
+  margin-bottom: clamp(0.15rem, 0.7vw, 0.4rem);
+}
+
+.flourishBottom {
+  margin-top: clamp(0.12rem, 0.6vw, 0.35rem);
+  transform: rotate(180deg);
+}
+
+.crest {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: clamp(68px, 16vw, 116px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  color: #f0d58e;
+  filter: drop-shadow(0 6px 12px rgb(10 1 6 / 38%));
+  animation:
+    crestReveal 1s var(--ease-royal) both,
+    crestBreath 5.5s 1.2s ease-in-out infinite;
+}
+
+.crest::before,
+.crest::after {
+  position: absolute;
+  z-index: -1;
+  width: 24%;
+  aspect-ratio: 1;
+  content: "";
+  border: 1px solid #d5b365;
+  transform: rotate(45deg);
+}
+
+.crest::before {
+  top: -4%;
+  border-width: 1px 0 0 1px;
+  border-radius: 70% 0 70% 0;
+}
+
+.crest::after {
+  bottom: -4%;
+  border-width: 0 1px 1px 0;
+  border-radius: 70% 0 70% 0;
+}
+
+.crestHalo {
+  position: absolute;
+  inset: -12%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(238 205 127 / 18%), transparent 68%);
+}
+
+.crestRing {
+  position: absolute;
+  inset: 5%;
+  border: 1px solid #e5c674;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 3px #4b1027,
+    0 0 0 4px rgb(221 187 103 / 72%),
+    inset 0 0 0 4px #4b1027,
+    inset 0 0 0 5px rgb(221 187 103 / 42%),
+    0 0 18px rgb(239 204 124 / 20%);
+}
+
+.crestRing::before,
+.crestRing::after {
+  position: absolute;
+  top: 50%;
+  width: 18%;
+  height: 42%;
+  content: "";
+  border-block: 1px solid rgb(226 193 112 / 66%);
+  transform: translateY(-50%);
+}
+
+.crestRing::before {
+  right: 100%;
+  border-radius: 80% 0 0 80%;
+}
+
+.crestRing::after {
+  left: 100%;
+  border-radius: 0 80% 80% 0;
+}
+
+.monogram {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: clamp(0.08rem, 0.4vw, 0.22rem);
+  text-shadow: 0 2px 8px rgb(17 2 9 / 55%);
+}
+
+.monogram b {
+  font:
+    700 clamp(1.2rem, 4.4vw, 2rem)/1 "Cormorant Garamond",
+    serif;
+}
+
+.monogram i {
+  color: #fff0bd;
+  font:
+    400 clamp(0.78rem, 2.8vw, 1.25rem)/1 "Pinyon Script",
+    cursive;
+}
+
+.wordmark {
+  position: relative;
+  z-index: 3;
+  margin-block: clamp(0.35rem, 1.35vw, 0.7rem) clamp(0.3rem, 1.1vw, 0.58rem);
+  color: #f1d894;
+  font:
+    700 clamp(1.2rem, 4.8vw, 1.9rem)/1 "Cormorant Garamond",
+    serif;
+  letter-spacing: clamp(0.24em, 1.2vw, 0.42em);
+  text-indent: clamp(0.24em, 1.2vw, 0.42em);
+  text-shadow: 0 4px 14px rgb(13 2 8 / 45%);
+  animation: coverTextReveal 900ms 180ms var(--ease-royal) both;
+}
+
+.coverDivider {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: min(30%, 130px);
+  height: 1px;
+  margin-block: clamp(0.08rem, 0.3vw, 0.18rem);
+  background: linear-gradient(90deg, transparent, #d9b86b, transparent);
+}
+
+.coverDivider i {
+  width: 6px;
+  height: 6px;
+  background: #4b1027;
+  border: 1px solid #d9b86b;
+  transform: rotate(45deg);
+}
+
+.coverDate {
+  position: relative;
+  z-index: 3;
+  color: #ddc37d;
+  font:
+    600 clamp(0.68rem, 2vw, 0.84rem)/1 "Cormorant Garamond",
+    serif;
+  letter-spacing: 0.2em;
+  animation: coverTextReveal 900ms 420ms var(--ease-royal) both;
+}
+.controlDock {
+  display: grid;
+  place-items: center;
+  min-height: 58px;
+  margin-top: clamp(0.65rem, 2.5vw, 1.25rem);
+}
+.openButton,
+.controls button {
+  min-height: 44px;
+  padding: 0.55rem 1rem;
+  color: var(--gold-light);
+  background: rgb(68 20 39 / 55%);
+  border: 1px solid rgb(217 183 107 / 66%);
+  border-radius: 999px;
+  font:
+    600 clamp(0.78rem, 2.5vw, 0.96rem)/1 "Cormorant Garamond",
+    serif;
+  cursor: pointer;
+}
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.45rem, 2vw, 1rem);
+  width: 100%;
+}
+.controls button {
+  max-width: 38%;
+}
+.controls button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.controls span {
+  min-width: 3rem;
+  color: var(--muted-ivory);
+  font:
+    600 0.88rem/1 "Cormorant Garamond",
+    serif;
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 430px) {
+  .stage {
+    width: min(96vw, 408px);
+  }
+  .section {
+    padding-inline: 0.25rem;
+  }
+  .subtitle {
+    margin-bottom: 1.4rem;
+  }
+  .photoMount {
+    width: 90%;
+    max-width: 92%;
+    max-height: 93%;
+  }
+}
+@media (max-width: 340px) {
+  .controls button {
+    padding-inline: 0.72rem;
+    font-size: 0.75rem;
+  }
+  .controls {
+    gap: 0.35rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .turningSheet,
+  .cover,
+  .movingShadow,
+  .paperHighlight {
+    transition: none !important;
+    animation: none !important;
+  }
+  .cover::after,
+  .crest,
+  .wordmark,
+  .coverDate {
+    animation: none !important;
+  }
+}
+
+@keyframes crestReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.9) rotate(-3deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes crestBreath {
+  50% {
+    filter: drop-shadow(0 6px 16px rgb(239 204 124 / 30%));
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes coverTextReveal {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes coverFoilSweep {
+  0%,
+  70% {
+    opacity: 0;
+    transform: translateX(-120%);
+  }
+  78% {
+    opacity: 0.55;
+  }
+  96%,
+  100% {
+    opacity: 0;
+    transform: translateX(120%);
+  }
+}

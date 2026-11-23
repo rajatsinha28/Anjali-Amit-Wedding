@@ -1,0 +1,608 @@
+.section {
+  padding: clamp(4rem, 11vw, 7rem) 0.75rem;
+  color: var(--ivory-text);
+  background: var(--invitation-royal);
+  text-align: center;
+}
+.section > h2 {
+  margin: 0;
+  color: var(--gold-light);
+  font:
+    italic 500 clamp(2.3rem, 10vw, 3.2rem) / 1.1 "Cormorant Garamond",
+    serif;
+}
+.dates {
+  margin: 0.65rem 0 2.75rem;
+  color: var(--muted-ivory);
+  font:
+    600 0.88rem/1.2 "Cormorant Garamond",
+    serif;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.list {
+  display: grid;
+  gap: 0;
+}
+.ceremonyScroll {
+  --scroll-metal: #b88a35;
+  --scroll-metal-light: #f2dda6;
+  width: min(91vw, 500px);
+  margin-inline: auto;
+}
+.chapter {
+  --chapter-bg: #4b1027;
+  --chapter-border: #c9a24a;
+  --chapter-title: #f2dda6;
+  --chapter-text: #f8ead9;
+  --chapter-glow: rgb(235 217 168 / 35%);
+  --particle-color: #e6bd63;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  justify-items: center;
+  width: 100%;
+  margin-inline: auto;
+  padding: clamp(2.65rem, 10vw, 4rem) clamp(1.25rem, 6vw, 2.65rem) clamp(2.4rem, 8vw, 3.25rem);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--chapter-border) 88%, transparent);
+  border-radius: 48% 48% 14px 14px / 11% 11% 14px 14px;
+  background: var(--chapter-bg);
+  box-shadow:
+    inset 0 0 34px rgb(18 4 10 / 24%),
+    0 24px 52px rgb(5 1 4 / 30%);
+}
+.chapter::before {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(128deg, rgb(255 255 255 / 2%) 0 1px, transparent 1px 7px),
+    radial-gradient(circle at 50% 18%, var(--chapter-glow), transparent 34%),
+    radial-gradient(circle at 12% 66%, rgb(255 255 255 / 5%), transparent 24%);
+  mix-blend-mode: soft-light;
+}
+.chapter::after {
+  position: absolute;
+  z-index: 8;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(115deg, transparent 34%, rgb(255 244 197 / 18%) 49%, transparent 64%);
+  background-size: 250% 100%;
+  opacity: 0.55;
+  animation: borderShimmer 7.5s ease-in-out infinite;
+}
+.frame {
+  position: absolute;
+  z-index: 7;
+  inset: 9px;
+  pointer-events: none;
+  border: 1px solid color-mix(in srgb, var(--chapter-border) 76%, transparent);
+  border-radius: 48% 48% 8px 8px / 10.5% 10.5% 8px 8px;
+  box-shadow:
+    inset 0 0 0 4px rgb(255 249 220 / 4%),
+    inset 0 0 0 5px color-mix(in srgb, var(--chapter-border) 24%, transparent);
+}
+.frame::after {
+  position: absolute;
+  inset: 9px;
+  content: "";
+  border: 1px solid color-mix(in srgb, var(--chapter-border) 28%, transparent);
+  border-radius: inherit;
+}
+.cornerFloral {
+  position: absolute;
+  z-index: 2;
+  top: 0.65rem;
+  width: clamp(74px, 22vw, 112px);
+  pointer-events: none;
+  filter: drop-shadow(0 5px 7px rgb(25 7 10 / 20%));
+  opacity: 0.72;
+  transform-origin: top center;
+  animation: ornamentSway 6s ease-in-out infinite;
+}
+.cornerFloral img {
+  width: 100%;
+  height: auto;
+}
+.cornerLeft {
+  left: -1.2rem;
+}
+.cornerRight {
+  right: -1.2rem;
+  transform: scaleX(-1);
+  animation-delay: -2.6s;
+}
+.topMotif {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: minmax(28px, 64px) auto minmax(28px, 64px);
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.65rem;
+  color: var(--chapter-border);
+}
+.topMotif span {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, currentColor);
+}
+.topMotif span:last-child {
+  background: linear-gradient(90deg, currentColor, transparent);
+}
+.topMotif b {
+  font-size: 0.62rem;
+  font-weight: 400;
+}
+.chapter h3 {
+  position: relative;
+  z-index: 4;
+  width: min(100%, 22rem);
+  margin: 0;
+  color: var(--chapter-title);
+  font:
+    600 clamp(1.6rem, 7.6vw, 2.35rem) / 1.08 "Cormorant Garamond",
+    serif;
+  letter-spacing: clamp(0.055em, 1vw, 0.1em);
+  text-wrap: balance;
+}
+.divider {
+  position: relative;
+  z-index: 4;
+  width: min(62%, 230px);
+  height: 18px;
+  margin: 0.7rem 0 0.55rem;
+  color: var(--chapter-border);
+}
+.divider::before,
+.divider::after {
+  position: absolute;
+  top: 50%;
+  width: calc(50% - 12px);
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg, transparent, currentColor);
+}
+.divider::before {
+  left: 0;
+}
+.divider::after {
+  right: 0;
+  background: linear-gradient(90deg, currentColor, transparent);
+}
+.divider i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border: 1px solid currentColor;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.artButton {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  width: min(76%, 310px);
+  height: clamp(150px, 42vw, 205px);
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.artButton:focus-visible {
+  outline: 2px solid var(--chapter-border);
+  outline-offset: 4px;
+}
+.artGlow {
+  position: absolute;
+  z-index: -1;
+  width: 92%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--chapter-glow), transparent 68%);
+  animation: glowBreath 6.5s ease-in-out infinite;
+}
+.artStage,
+.art {
+  width: 100%;
+  height: 100%;
+}
+.artStage {
+  display: block;
+  filter: drop-shadow(0 10px 14px rgb(22 7 8 / 26%));
+}
+.art img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.artButton[data-floating="true"] .artStage {
+  animation: artFloat 6s ease-in-out infinite;
+}
+.information {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  justify-items: center;
+  width: min(100%, 20rem);
+  margin-top: 0.45rem;
+  padding: 1rem 1rem 0.95rem;
+  border-block: 1px solid color-mix(in srgb, var(--chapter-border) 28%, transparent);
+  background: linear-gradient(90deg, transparent, rgb(255 250 232 / 7%), transparent);
+}
+.date {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  color: var(--chapter-title);
+}
+.date strong {
+  position: relative;
+  font:
+    600 clamp(3rem, 14vw, 3.55rem) / 0.82 "Cormorant Garamond",
+    serif;
+  font-variant-numeric: lining-nums;
+  text-shadow: 0 0 22px var(--chapter-glow);
+}
+.date strong::after {
+  position: absolute;
+  inset: -6px -18px;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 34%, rgb(255 250 219 / 45%) 50%, transparent 66%);
+  transform: translateX(-120%);
+  animation: dateSweep 7s ease-in-out infinite;
+}
+.date span {
+  margin-top: 0.65rem;
+  font:
+    600 clamp(1.12rem, 5.2vw, 1.35rem) / 1.2 "Cormorant Garamond",
+    serif;
+  letter-spacing: 0.08em;
+}
+.time,
+.venue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  color: var(--chapter-title);
+}
+.time {
+  margin-top: 0.85rem;
+  font:
+    600 clamp(1.38rem, 6.2vw, 1.68rem) / 1.2 "Cormorant Garamond",
+    serif;
+  font-variant-numeric: lining-nums;
+}
+.venue {
+  margin-top: 0.65rem;
+  font:
+    italic 600 clamp(1.2rem, 5.2vw, 1.43rem) / 1.25 "Cormorant Garamond",
+    serif;
+}
+.time svg,
+.venue svg {
+  width: 1.08em;
+  height: 1.08em;
+  overflow: visible;
+  fill: none;
+  stroke: var(--chapter-border);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+.venue a {
+  color: inherit;
+  text-decoration-color: color-mix(in srgb, var(--chapter-border) 65%, transparent);
+  text-underline-offset: 0.2em;
+}
+.lowerDivider {
+  margin-top: 1.05rem;
+  margin-bottom: 0.45rem;
+}
+.chapter > p {
+  position: relative;
+  z-index: 4;
+  max-width: 22rem;
+  margin: 0.5rem 0 0;
+  color: var(--chapter-text);
+  font:
+    500 clamp(1rem, 4.3vw, 1.1rem) / 1.66 "Lora",
+    serif;
+  text-wrap: pretty;
+}
+.bottomFlourish {
+  position: relative;
+  z-index: 4;
+  margin-top: 1.25rem;
+  color: var(--chapter-border);
+  font-size: 0.62rem;
+  opacity: 0.8;
+}
+.ambient,
+.burst {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.ambient span {
+  position: absolute;
+  top: -5%;
+  left: var(--particle-x);
+  width: var(--particle-size);
+  height: calc(var(--particle-size) * 1.45);
+  border-radius: 72% 28% 70% 30%;
+  background: var(--particle-color);
+  box-shadow: 0 0 7px color-mix(in srgb, var(--particle-color) 66%, transparent);
+  opacity: 0;
+  animation: particleFall var(--particle-duration) linear var(--particle-delay) infinite;
+}
+.mehendi-sangeet .ambient span {
+  top: auto;
+  bottom: -4%;
+  border-radius: 50%;
+  animation-name: particleRise;
+}
+.burst {
+  display: grid;
+  place-items: center;
+  overflow: visible;
+}
+.burst i {
+  position: absolute;
+  width: 7px;
+  height: 10px;
+  border-radius: 70% 30%;
+  background: var(--particle-color);
+  animation: burstParticle 0.95s var(--ease-royal) forwards;
+}
+.haldi {
+  --chapter-bg: radial-gradient(circle at 50% 28%, #fff1c9, #f1ce70 58%, #e9a527 100%);
+  --chapter-border: #b88a35;
+  --chapter-title: #713a15;
+  --chapter-text: #5a2d17;
+  --chapter-glow: rgb(246 176 30 / 38%);
+  --particle-color: #f29b1d;
+}
+.mehendi-sangeet {
+  --chapter-bg: radial-gradient(circle at 50% 25%, #1a5943, #123c30 54%, #7a1b33 112%);
+  --chapter-border: #c9a24a;
+  --chapter-title: #ebd9a8;
+  --chapter-text: #fbf5e6;
+  --chapter-glow: rgb(201 162 74 / 30%);
+  --particle-color: #e3c570;
+}
+.wedding {
+  --chapter-bg: radial-gradient(circle at 50% 24%, #731b38, #5a1224 55%, #3d1022 100%);
+  --chapter-border: #c9a24a;
+  --chapter-title: #ebd9a8;
+  --chapter-text: #fbf5e6;
+  --chapter-glow: rgb(235 217 168 / 32%);
+  --particle-color: #a3182e;
+}
+.wedding .artButton {
+  width: min(82%, 330px);
+  height: clamp(180px, 50vw, 230px);
+}
+.connector {
+  position: relative;
+  width: 22px;
+  height: 76px;
+  margin-inline: auto;
+}
+.connector span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 0;
+  background: linear-gradient(var(--foil-gold), #fff0b9 56%, var(--foil-gold));
+  box-shadow: 0 0 8px rgb(217 183 107 / 55%);
+  transition: height 1s var(--ease-royal);
+}
+.connector i {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  background: var(--invitation-royal);
+  border: 1px solid var(--foil-gold);
+  opacity: 0;
+  transform: translateX(-50%) rotate(45deg) scale(0.5);
+  transition:
+    opacity 0.5s 0.45s ease,
+    transform 0.65s 0.42s var(--ease-royal);
+}
+.connector[data-revealed="true"] span {
+  height: 100%;
+}
+.connector[data-revealed="true"] i {
+  opacity: 1;
+  transform: translateX(-50%) rotate(45deg) scale(1);
+}
+.chapter[data-active="false"] .ambient span,
+.chapter[data-active="false"] .cornerFloral,
+.chapter[data-active="false"] .artStage,
+.chapter[data-active="false"] .artGlow,
+.chapter[data-active="false"] .date strong::after,
+.chapter[data-active="false"]::after {
+  animation-play-state: paused !important;
+}
+@media (hover: hover) and (pointer: fine) {
+  .artButton {
+    transition: transform 600ms var(--ease-royal);
+  }
+  .artButton:hover {
+    transform: translate3d(3px, -2px, 0);
+  }
+  .artButton:hover .artGlow {
+    filter: brightness(1.18);
+  }
+}
+@media (min-width: 768px) {
+  .section {
+    padding-inline: 1.5rem;
+  }
+  .ceremonyScroll {
+    width: min(74vw, 560px);
+  }
+  .chapter {
+    padding-inline: 3.25rem;
+  }
+  .chapter h3 {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+  }
+}
+@media (max-width: 350px) {
+  .section {
+    padding-inline: 0.45rem;
+  }
+  .chapter {
+    width: 100%;
+    padding-inline: 1rem;
+  }
+  .ceremonyScroll {
+    width: 94vw;
+  }
+  .cornerFloral {
+    width: 70px;
+    opacity: 0.56;
+  }
+  .artButton {
+    width: 72%;
+    height: 142px;
+  }
+  .wedding .artButton {
+    height: 168px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chapter,
+  .frame,
+  .chapter h3,
+  .divider,
+  .artButton,
+  .artGlow,
+  .date strong,
+  .date span,
+  .time,
+  .venue,
+  .chapter > p {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+  }
+  .ambient,
+  .burst {
+    display: none;
+  }
+  .chapter::after,
+  .cornerFloral,
+  .artStage,
+  .artGlow,
+  .date strong::after {
+    animation: none !important;
+  }
+}
+@keyframes ornamentSway {
+  50% {
+    rotate: 1.5deg;
+  }
+}
+@keyframes artFloat {
+  50% {
+    transform: translateY(-4px);
+  }
+}
+@keyframes glowBreath {
+  50% {
+    opacity: 0.68;
+    transform: scale(1.06);
+  }
+}
+@keyframes borderShimmer {
+  0%,
+  64% {
+    background-position: 125% 0;
+    opacity: 0;
+  }
+  76% {
+    opacity: 0.52;
+  }
+  100% {
+    background-position: -125% 0;
+    opacity: 0;
+  }
+}
+@keyframes dateSweep {
+  0%,
+  72% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  78% {
+    opacity: 0.7;
+  }
+  94%,
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+@keyframes particleFall {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -10px, 0) rotate(0deg);
+  }
+  12% {
+    opacity: 0.72;
+  }
+  88% {
+    opacity: 0.52;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--particle-drift), 1120%, 0) rotate(320deg);
+  }
+}
+@keyframes particleRise {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0) scale(0.7);
+  }
+  15% {
+    opacity: 0.65;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--particle-drift), -1050%, 0) scale(1.1);
+  }
+}
+@keyframes burstParticle {
+  0% {
+    opacity: 0;
+    transform: rotate(var(--burst-angle)) translateX(0) scale(0.5);
+  }
+  18% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(var(--burst-angle)) translateX(var(--burst-distance)) scale(1);
+  }
+}

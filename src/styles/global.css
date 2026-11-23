@@ -1,0 +1,98 @@
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url("/fonts/cormorant-garamond-latin-600-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Noto Serif Devanagari";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("/fonts/noto-serif-devanagari-devanagari-400-normal.woff2") format("woff2");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+  background: var(--ivory);
+  overflow-x: clip;
+  font-family: "Lora", Georgia, serif;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100svh;
+  margin: 0;
+  color: var(--ink);
+  background: var(--ivory);
+  overflow-x: clip;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+[href],
+input,
+select,
+textarea,
+[tabindex]:not([tabindex="-1"]) {
+  outline-offset: 4px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--burgundy);
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+[lang="sa"],
+[lang="hi"] {
+  font-family: "Noto Serif Devanagari", serif;
+  font-feature-settings: normal;
+  letter-spacing: normal;
+  line-height: 1.7;
+  text-transform: none;
+}
+
+.app-shell {
+  width: min(100%, var(--dev-viewport-width, 100%));
+  min-height: 100svh;
+  margin-inline: auto;
+  background: var(--ivory);
+}
+
+.noscript-invitation {
+  width: min(100% - 2rem, 44rem);
+  margin-inline: auto;
+  padding: 2rem max(1rem, env(safe-area-inset-right)) 3rem max(1rem, env(safe-area-inset-left));
+  line-height: 1.7;
+}
+
+html[data-outline-layers="true"] * {
+  outline: 1px solid rgb(163 24 46 / 28%);
+}
+
+@supports (min-height: 100dvh) {
+  body,
+  .app-shell {
+    min-height: 100dvh;
+  }
+}

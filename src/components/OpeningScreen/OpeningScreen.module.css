@@ -1,0 +1,522 @@
+.screen {
+  position: fixed;
+  z-index: 40;
+  inset: 0;
+  isolation: isolate;
+  width: 100%;
+  height: 100svh;
+  min-height: 0;
+  overflow: hidden;
+  color: var(--ivory);
+  background: transparent;
+}
+
+.screen::after {
+  position: absolute;
+  z-index: 2;
+  inset: max(10px, env(safe-area-inset-top)) max(10px, env(safe-area-inset-right))
+    max(10px, env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left));
+  content: "";
+  pointer-events: none;
+  border: 1px solid rgb(201 162 74 / 72%);
+  box-shadow:
+    inset 0 0 0 4px rgb(90 18 36 / 18%),
+    inset 0 0 0 5px rgb(201 162 74 / 24%);
+}
+
+.content {
+  position: relative;
+  z-index: var(--layer-content);
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto auto;
+  align-items: center;
+  justify-items: center;
+  width: min(100%, 560px);
+  height: 100svh;
+  min-height: 0;
+  margin-inline: auto;
+  padding: max(4.5svh, calc(env(safe-area-inset-top) + 1.5rem)) 1rem
+    max(3svh, calc(env(safe-area-inset-bottom) + 1rem));
+  gap: clamp(0.25rem, 1.1svh, 0.75rem);
+  text-align: center;
+}
+
+.heading,
+.idolWrap,
+.buttonWrap {
+  opacity: 0;
+}
+
+.heading {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  color: #ffe8a8;
+  font-family: "Noto Serif Devanagari", serif;
+  font-size: clamp(1.9rem, 7.2vw, 2.65rem);
+  font-weight: 600;
+  line-height: 1.6;
+  text-shadow:
+    0 2px 11px rgb(17 2 7 / 78%),
+    0 0 20px rgb(243 204 105 / 24%);
+}
+
+.idolStage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  align-self: stretch;
+  width: 100%;
+  min-height: 0;
+}
+
+.halo {
+  position: absolute;
+  z-index: 1;
+  width: min(76vw, 380px);
+  aspect-ratio: 1;
+  border: 1px solid rgb(235 217 168 / 42%);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 43%, rgb(255 235 174 / 38%) 0 16%, transparent 38%),
+    radial-gradient(
+      circle,
+      rgb(255 226 143 / 28%) 0 34%,
+      rgb(246 176 30 / 12%) 52%,
+      transparent 72%
+    );
+  box-shadow:
+    inset 0 0 34px rgb(255 226 143 / 13%),
+    0 0 46px rgb(246 176 30 / 14%);
+  opacity: 0;
+}
+
+.halo::before,
+.halo::after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.halo::before {
+  inset: 13%;
+  border: 1px solid rgb(255 232 168 / 32%);
+  box-shadow: 0 0 18px rgb(243 204 105 / 18%);
+}
+
+.halo::after {
+  inset: 2%;
+  background: conic-gradient(
+    from 205deg,
+    transparent 0 42%,
+    rgb(255 232 168 / 18%) 48%,
+    transparent 54% 100%
+  );
+  animation: haloGlint 12s linear infinite;
+}
+
+.sparkles {
+  position: absolute;
+  z-index: 1;
+  width: min(76vw, 380px);
+  aspect-ratio: 1;
+  pointer-events: none;
+}
+
+.sparkles i {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #ffe6a3;
+  border-radius: 50%;
+  box-shadow: 0 0 9px rgb(255 226 143 / 75%);
+  opacity: 0.45;
+  animation: sparkle 5.8s ease-in-out infinite;
+}
+
+.sparkles i:nth-child(1) {
+  top: 14%;
+  left: 24%;
+  animation-delay: -1.2s;
+}
+.sparkles i:nth-child(2) {
+  top: 22%;
+  right: 19%;
+  animation-delay: -3.4s;
+}
+.sparkles i:nth-child(3) {
+  top: 52%;
+  left: 9%;
+  animation-delay: -4.7s;
+}
+.sparkles i:nth-child(4) {
+  top: 58%;
+  right: 8%;
+  animation-delay: -2.1s;
+}
+.sparkles i:nth-child(5) {
+  bottom: 19%;
+  left: 21%;
+  animation-delay: -0.6s;
+}
+.sparkles i:nth-child(6) {
+  right: 23%;
+  bottom: 15%;
+  animation-delay: -5.1s;
+}
+
+.idolWrap {
+  position: relative;
+  z-index: 2;
+  width: min(68vw, 340px);
+  max-height: 38svh;
+  filter: drop-shadow(0 14px 18px rgb(43 26 20 / 35%));
+}
+
+.idolWrap img {
+  width: 100%;
+  max-height: 38svh;
+  object-fit: contain;
+}
+
+.diyas {
+  position: absolute;
+  z-index: 3;
+  right: 6%;
+  bottom: 1%;
+  left: 6%;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.diya {
+  position: relative;
+  width: clamp(42px, 12vw, 52px);
+  filter: drop-shadow(0 0 9px rgb(235 217 168 / 55%));
+  animation: diyaFlicker 2.2s ease-in-out infinite alternate;
+}
+
+.diya:last-child {
+  animation-duration: 2.6s;
+  animation-delay: -0.8s;
+}
+
+.diya img {
+  width: 100%;
+  height: auto;
+}
+
+.shloka {
+  margin: 0;
+  max-width: min(100%, 34rem);
+  padding: 0.35rem 0.75rem;
+  color: #fff0c6;
+  background: linear-gradient(90deg, transparent, rgb(47 3 17 / 58%) 14% 86%, transparent);
+  border-radius: 0.6rem;
+  font-family: "Tiro Devanagari Sanskrit", "Noto Serif Devanagari", serif;
+  font-size: clamp(1.125rem, 4.8vw, 1.45rem);
+  line-height: 1.75;
+  white-space: pre-line;
+  text-shadow: 0 2px 10px rgb(17 2 7 / 78%);
+}
+
+.shloka span {
+  display: block;
+  opacity: 0;
+  white-space: normal;
+}
+
+.buttonWrap {
+  position: relative;
+  padding: 0.35rem;
+}
+
+.buttonWrap::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  border: 1px solid rgb(201 162 74 / 72%);
+  border-radius: 999px;
+  animation: pulseRing 2.4s ease-out infinite;
+}
+
+.button {
+  position: relative;
+  width: min(220px, 68vw);
+  min-height: 56px;
+  overflow: hidden;
+  color: var(--ivory);
+  background: rgb(90 18 36 / 72%);
+  border: 1px solid var(--antique-gold);
+  border-radius: 999px;
+  box-shadow:
+    inset 0 0 0 3px rgb(90 18 36 / 72%),
+    inset 0 0 0 4px rgb(201 162 74 / 68%),
+    0 8px 24px rgb(43 26 20 / 25%);
+  font:
+    600 0.94rem/1 "Cormorant Garamond",
+    serif;
+  letter-spacing: 0.18em;
+  cursor: pointer;
+  transition: transform 120ms ease-out;
+}
+
+.button::after {
+  position: absolute;
+  top: -60%;
+  bottom: -60%;
+  left: -35%;
+  width: 28%;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 35%), transparent);
+  transform: skewX(-18deg);
+  animation: shimmer 3.2s 2.6s ease-in-out infinite;
+}
+
+.button:active {
+  transform: scale(0.96);
+}
+
+.button:disabled {
+  cursor: default;
+}
+
+.opening .content {
+  pointer-events: none;
+  animation: overlayExit 720ms 80ms var(--ease-soft) forwards;
+}
+
+.opening .halo {
+  animation: haloFarewell 720ms ease-out forwards;
+}
+
+.opening .corner,
+.opening::after {
+  animation: frameExit 1.7s 750ms var(--ease-soft) forwards;
+}
+
+.ripple {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+  background: rgb(235 217 168 / 42%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple 600ms ease-out forwards;
+}
+
+.idle {
+  animation: idleBounce 900ms var(--ease-royal) 1;
+}
+
+.corner {
+  position: absolute;
+  z-index: var(--layer-ornaments);
+  width: min(36vw, 210px);
+  pointer-events: none;
+  opacity: 0.52;
+}
+
+.corner img {
+  width: 100%;
+  height: auto;
+}
+
+.topLeft {
+  top: 0;
+  left: 0;
+}
+
+.topRight {
+  top: 0;
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.bottomLeft {
+  bottom: 0;
+  left: 0;
+  transform: scaleY(-1);
+}
+
+.bottomRight {
+  right: 0;
+  bottom: 0;
+  transform: scale(-1);
+}
+
+@keyframes shimmer {
+  0%,
+  58% {
+    left: -35%;
+  }
+  82%,
+  100% {
+    left: 115%;
+  }
+}
+
+@keyframes pulseRing {
+  0%,
+  36% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  48% {
+    opacity: 0.55;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes diyaFlicker {
+  from {
+    filter: drop-shadow(0 0 7px rgb(235 217 168 / 46%));
+  }
+  to {
+    filter: drop-shadow(0 0 13px rgb(246 176 30 / 72%));
+  }
+}
+
+@keyframes ripple {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(22);
+  }
+}
+
+@keyframes idleBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  42% {
+    transform: translateY(-5px);
+  }
+  68% {
+    transform: translateY(1px);
+  }
+}
+
+@keyframes overlayExit {
+  to {
+    opacity: 0;
+    transform: translate3d(0, -16px, 0);
+  }
+}
+
+@keyframes haloFarewell {
+  40% {
+    opacity: 0.6;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.14);
+  }
+}
+
+@keyframes haloGlint {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0.18;
+    transform: translate3d(0, 4px, 0) scale(0.7);
+  }
+  48% {
+    opacity: 0.68;
+    transform: translate3d(0, -5px, 0) scale(1.15);
+  }
+}
+
+@keyframes frameExit {
+  to {
+    opacity: 0;
+  }
+}
+
+@media (max-height: 690px) and (orientation: portrait) {
+  .content {
+    padding-top: max(2.5svh, calc(env(safe-area-inset-top) + 0.75rem));
+    padding-bottom: max(2svh, calc(env(safe-area-inset-bottom) + 0.5rem));
+    gap: 0.15rem;
+  }
+
+  .heading {
+    font-size: clamp(1.72rem, 7vw, 2.05rem);
+  }
+
+  .idolWrap,
+  .idolWrap img {
+    max-height: 31svh;
+  }
+
+  .shloka {
+    font-size: clamp(1.05rem, 4.6vw, 1.25rem);
+    line-height: 1.68;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .content {
+    grid-template-columns: minmax(150px, 42%) 1fr;
+    grid-template-rows: auto auto auto auto;
+    column-gap: 1.25rem;
+    width: min(100% - 3rem, 820px);
+    padding-block: max(1rem, env(safe-area-inset-top));
+  }
+
+  .idolStage {
+    grid-row: 1 / -1;
+    max-height: calc(100svh - 2rem);
+  }
+
+  .idolWrap,
+  .idolWrap img {
+    width: auto;
+    max-height: 76svh;
+  }
+
+  .heading,
+  .shloka,
+  .buttonWrap {
+    grid-column: 2;
+  }
+
+  .corner {
+    width: min(25vw, 170px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .diya,
+  .button::after,
+  .buttonWrap::before,
+  .opening .halo,
+  .halo::after,
+  .sparkles i {
+    animation: none;
+  }
+
+  .opening .content {
+    animation-duration: 400ms;
+    animation-delay: 0ms;
+  }
+}
+
+@supports (min-height: 100dvh) {
+  .screen,
+  .content {
+    height: 100dvh;
+  }
+}

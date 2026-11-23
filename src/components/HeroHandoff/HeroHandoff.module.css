@@ -1,0 +1,247 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  color: #f8ebcf;
+  background: #2a0714;
+}
+.hero > div {
+  min-height: 100svh;
+}
+.content {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(100% - 2.5rem, 720px);
+  min-height: 100svh;
+  margin-inline: auto;
+  padding: max(1.3rem, env(safe-area-inset-top)) 0 max(1.5rem, env(safe-area-inset-bottom));
+  text-align: center;
+}
+.sacredHeading {
+  margin: 0 0 0.2rem;
+  color: #e7c779;
+  font:
+    400 clamp(1.15rem, 4.8vw, 1.65rem)/1.5 "Noto Serif Devanagari",
+    serif;
+  text-shadow: 0 2px 12px #120208;
+  opacity: 0;
+}
+.portraitStage {
+  position: relative;
+  flex: 0 1 auto;
+  width: clamp(240px, 68vw, 480px);
+  max-height: 46svh;
+  aspect-ratio: 4/5.4;
+  margin-top: 0.2rem;
+}
+.portraitCrop {
+  position: absolute;
+  inset: 5.5% 9% 0;
+  overflow: hidden;
+  border-radius: 46% 46% 8% 8% / 20% 20% 4% 4%;
+  background: #210510;
+  filter: blur(14px) brightness(0.82);
+  opacity: 0;
+  transform: scale(1.035);
+  transform-origin: center 40%;
+  will-change: opacity, transform, filter;
+  -webkit-mask-image: linear-gradient(#000 0 82%, transparent 100%);
+  mask-image: linear-gradient(#000 0 82%, transparent 100%);
+}
+.portrait,
+.portrait img {
+  width: 100%;
+  height: 100%;
+}
+.portrait img {
+  object-fit: cover;
+}
+.jharokha {
+  position: absolute;
+  z-index: 2;
+  inset: -1.5% -3%;
+  width: 106%;
+  height: 103%;
+  pointer-events: none;
+  filter: drop-shadow(0 10px 13px rgb(10 1 5 / 48%));
+  opacity: 0;
+  transform: translateY(9px) scale(0.975);
+  transform-origin: center;
+}
+.jharokhaImage,
+.jharokhaImage img {
+  width: 100%;
+  height: 100%;
+}
+.jharokhaImage img {
+  object-fit: fill;
+}
+.names {
+  display: grid;
+  justify-items: center;
+  width: min(100%, 540px);
+  margin-top: clamp(1rem, 3svh, 1.35rem);
+}
+.person {
+  display: grid;
+  justify-items: center;
+}
+.name {
+  margin: 0;
+  padding: 0.03em 0.12em 0.12em;
+  color: #f0d493;
+  font:
+    400 clamp(3.1rem, 15vw, 5rem)/0.86 "Pinyon Script",
+    cursive;
+  text-shadow: 0 2px 16px rgb(10 1 5 / 52%);
+  clip-path: inset(0 100% 0 0);
+  opacity: 0;
+}
+.ampersand {
+  display: grid;
+  grid-template-columns: minmax(38px, 90px) auto minmax(38px, 90px);
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0.1rem 0;
+  color: #e5c574;
+  font:
+    400 clamp(1.7rem, 7vw, 2.4rem)/0.9 "Pinyon Script",
+    cursive;
+  opacity: 0;
+}
+.ampersand span {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, currentColor);
+}
+.ampersand span:last-child {
+  background: linear-gradient(90deg, currentColor, transparent);
+}
+.scrollHint {
+  display: grid;
+  justify-items: center;
+  gap: 0.3rem;
+  margin-top: auto;
+  padding-top: clamp(1.75rem, 5svh, 3rem);
+  color: #d8b963;
+  font:
+    600 0.63rem/1 "Cormorant Garamond",
+    serif;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 250ms ease-out;
+}
+.scrollHint i {
+  width: 8px;
+  height: 8px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg);
+  animation: bob 1.8s ease-in-out infinite;
+}
+.settled .sacredHeading,
+.settled .name,
+.settled .ampersand,
+.settled .scrollHint,
+.settled .portraitCrop,
+.settled .jharokha {
+  opacity: 1 !important;
+}
+.settled .name {
+  clip-path: inset(-20% -10%) !important;
+  transform: none !important;
+}
+.settled .portraitCrop,
+.settled .jharokha {
+  filter: none !important;
+  transform: none !important;
+}
+.settled [data-hero-string] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+.hidden {
+  opacity: 0 !important;
+}
+@keyframes bob {
+  50% {
+    transform: translateY(4px) rotate(45deg);
+  }
+}
+@media (max-height: 700px) and (orientation: portrait) {
+  .portraitStage {
+    width: clamp(230px, 72vw, 400px);
+    max-height: 52svh;
+  }
+  .name {
+    font-size: clamp(2.8rem, 13vw, 4rem);
+  }
+}
+@media (orientation: landscape) and (max-height: 500px) {
+  .content {
+    display: grid;
+    grid-template-columns: minmax(230px, 42%) 1fr;
+    grid-template-rows: auto 1fr auto;
+    width: min(100% - 5rem, 820px);
+    min-height: 110svh;
+    column-gap: 2rem;
+    padding-block: 0.7rem 1rem;
+  }
+  .sacredHeading {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .portraitStage {
+    grid-column: 1;
+    grid-row: 2 / 4;
+    width: auto;
+    height: 82svh;
+    max-height: none;
+    margin: 0 auto;
+  }
+  .names {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    align-self: center;
+  }
+  .name {
+    font-size: clamp(2.8rem, 8vw, 4.2rem);
+  }
+  .scrollHint {
+    grid-column: 2;
+    grid-row: 3;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scrollHint i {
+    animation: none;
+  }
+
+  .sacredHeading,
+  .name,
+  .ampersand,
+  .scrollHint,
+  .portraitCrop,
+  .jharokha {
+    opacity: 1;
+    transform: none;
+  }
+
+  [data-hero-string] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .name {
+    clip-path: inset(-20% -10%);
+  }
+
+  .portraitCrop,
+  .jharokha {
+    filter: none;
+    will-change: auto;
+  }
+}

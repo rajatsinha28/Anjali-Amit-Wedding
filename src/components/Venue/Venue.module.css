@@ -1,0 +1,358 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(3.75rem, 10vw, 6.5rem) clamp(0.65rem, 3vw, 1.5rem) clamp(4.5rem, 12vw, 7rem);
+  color: var(--ivory-text);
+  background:
+    radial-gradient(circle at 50% 16%, rgb(122 27 51 / 42%), transparent 40%),
+    linear-gradient(180deg, var(--invitation-royal), #210611 58%, var(--invitation-night));
+  text-align: center;
+}
+
+.section::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(90deg, transparent 49.8%, rgb(217 183 107 / 7%) 50%, transparent 50.2%),
+    radial-gradient(circle at 50% 0, rgb(242 221 166 / 9%), transparent 30%);
+}
+
+.royalCard {
+  position: relative;
+  width: min(100%, 48rem);
+  margin: 0 auto;
+  padding: clamp(3.5rem, 11vw, 5.25rem) clamp(0.85rem, 4vw, 2.25rem) clamp(1.5rem, 5vw, 2.5rem);
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgb(255 255 255 / 4%), transparent 32%),
+    radial-gradient(circle at 50% 10%, rgb(111 35 59 / 65%), transparent 37%),
+    linear-gradient(180deg, #421126 0%, #2b0917 56%, #200712 100%);
+  border: 1px solid rgb(217 183 107 / 86%);
+  border-radius: clamp(1.4rem, 6vw, 2.6rem) clamp(1.4rem, 6vw, 2.6rem) 1rem 1rem;
+  box-shadow:
+    0 2rem 5rem rgb(0 0 0 / 36%),
+    inset 0 0 3.5rem rgb(0 0 0 / 24%);
+}
+
+.royalCard::before,
+.royalCard::after {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  content: "";
+}
+
+.royalCard::before {
+  inset: 0.45rem;
+  border: 1px solid rgb(217 183 107 / 38%);
+  border-radius: calc(clamp(1.4rem, 6vw, 2.6rem) - 0.35rem)
+    calc(clamp(1.4rem, 6vw, 2.6rem) - 0.35rem) 0.7rem 0.7rem;
+}
+
+.royalCard::after {
+  right: 1.1rem;
+  bottom: 1.1rem;
+  left: 1.1rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--foil-gold), transparent);
+  opacity: 0.48;
+}
+
+.corner {
+  position: absolute;
+  z-index: 2;
+  top: -0.2rem;
+  width: clamp(7.5rem, 29vw, 13rem);
+  height: auto;
+  pointer-events: none;
+  filter: saturate(0.85) brightness(0.98) drop-shadow(0 0.45rem 0.7rem rgb(0 0 0 / 28%));
+  opacity: 0.9;
+}
+
+.corner img {
+  width: 100%;
+  height: auto;
+}
+
+.cornerLeft {
+  left: -0.65rem;
+}
+
+.cornerRight {
+  right: -0.65rem;
+  transform: scaleX(-1);
+}
+
+.heading {
+  position: relative;
+  z-index: 3;
+}
+
+.eyebrow {
+  margin: 0 0 0.65rem;
+  color: var(--foil-gold);
+  font:
+    600 0.78rem/1.2 "Lora",
+    serif;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.heading h2 {
+  margin: 0;
+  color: var(--gold-light);
+  text-shadow: 0 0.25rem 1.5rem rgb(0 0 0 / 38%);
+  font:
+    italic 500 clamp(2.35rem, 10vw, 3.4rem)/1.02 "Cormorant Garamond",
+    serif;
+}
+
+.headingOrnament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: min(72%, 18rem);
+  margin: 1rem auto 0.95rem;
+  color: var(--foil-gold);
+}
+
+.headingOrnament span {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, currentcolor);
+}
+
+.headingOrnament span:last-child {
+  transform: scaleX(-1);
+}
+
+.headingOrnament i {
+  font-size: 0.62rem;
+  font-style: normal;
+}
+
+.heading h3 {
+  margin: 0;
+  color: #fff0c7;
+  font:
+    600 clamp(1.7rem, 7vw, 2.35rem)/1.08 "Cormorant Garamond",
+    serif;
+  letter-spacing: 0.025em;
+}
+
+.address {
+  max-width: 31rem;
+  margin: 0.55rem auto 0;
+  color: var(--muted-ivory);
+  font:
+    400 1rem/1.65 "Lora",
+    serif;
+}
+
+.mapStage {
+  position: relative;
+  z-index: 3;
+  margin-top: 2.45rem;
+  padding: 0.42rem;
+  background: linear-gradient(135deg, #f1d995, #8d6926 32%, #e1bd69 62%, #7a581f);
+  border: 1px solid #f5e3ab;
+  border-radius: 1.15rem;
+  box-shadow:
+    0 1.4rem 2.6rem rgb(0 0 0 / 34%),
+    0 0 0 0.3rem rgb(111 72 22 / 35%);
+}
+
+.mapCrown {
+  position: absolute;
+  z-index: 4;
+  top: -1.45rem;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 0.42rem;
+  width: 7.4rem;
+  height: 2.5rem;
+  padding: 0 0.7rem;
+  color: #6b4417;
+  background: linear-gradient(180deg, #f3dda1, #c49742);
+  border: 1px solid #ffeab0;
+  border-radius: 50% 50% 0.55rem 0.55rem;
+  box-shadow: 0 0.45rem 0.85rem rgb(0 0 0 / 30%);
+  transform: translateX(-50%);
+}
+
+.mapCrown i {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, currentcolor);
+}
+
+.mapCrown i:last-child {
+  transform: scaleX(-1);
+}
+
+.mapCrown b {
+  font-size: 0.72rem;
+}
+
+.mapFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.32;
+  overflow: hidden;
+  background: #e8ddc5;
+  border: 1px solid #74521d;
+  border-radius: 0.72rem;
+}
+
+.mapFrame::after {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(
+      180deg,
+      rgb(48 8 23 / 9%),
+      transparent 23%,
+      transparent 70%,
+      rgb(48 8 23 / 18%)
+    ),
+    radial-gradient(circle at 50% 50%, transparent 61%, rgb(48 8 23 / 12%));
+  border: 4px solid rgb(42 7 20 / 14%);
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgb(255 240 199 / 55%);
+}
+
+.mapFrame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: sepia(0.32) saturate(0.78) contrast(0.95) brightness(0.96);
+  pointer-events: none;
+}
+
+.mapTap {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  color: var(--gold-light);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pin {
+  position: relative;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: linear-gradient(135deg, #761a35, #3b091a);
+  border: 2px solid #ffe6a1;
+  border-radius: 50% 50% 50% 0;
+  box-shadow:
+    0 0.55rem 1.2rem rgb(42 7 20 / 46%),
+    0 0 0 0.35rem rgb(255 236 176 / 18%);
+  transform: rotate(-45deg) translate(20%, -20%);
+}
+
+.pin::after {
+  position: absolute;
+  inset: 0.69rem;
+  content: "";
+  background: #ffe8a5;
+  border-radius: 50%;
+  box-shadow: 0 0 0.45rem rgb(255 232 165 / 70%);
+}
+
+.mapAction {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  display: grid;
+  min-height: 54px;
+  place-content: center;
+  padding: 0.58rem 1rem;
+  color: #ffe9ad;
+  background: linear-gradient(180deg, rgb(83 18 39 / 97%), rgb(42 7 20 / 97%));
+  border: 1px solid rgb(242 221 166 / 80%);
+  border-radius: 0.65rem;
+  box-shadow:
+    0 0.65rem 1.4rem rgb(0 0 0 / 30%),
+    inset 0 0 0 1px rgb(255 255 255 / 5%);
+}
+
+.mapAction strong {
+  font:
+    600 1rem/1.2 "Lora",
+    serif;
+  letter-spacing: 0.05em;
+}
+
+.mapAction small {
+  margin-top: 0.15rem;
+  color: var(--muted-ivory);
+  font:
+    400 0.78rem/1.2 "Lora",
+    serif;
+  letter-spacing: 0.035em;
+}
+
+.mapTap:focus-visible {
+  outline: 3px solid var(--gold-light);
+  outline-offset: 5px;
+}
+
+.mobileNote {
+  position: relative;
+  z-index: 3;
+  margin: 1.15rem auto 0;
+  color: rgb(224 201 190 / 82%);
+  font:
+    italic 400 0.86rem/1.4 "Lora",
+    serif;
+}
+
+@media (min-width: 48rem) {
+  .royalCard {
+    padding-right: 2.6rem;
+    padding-left: 2.6rem;
+  }
+
+  .mapFrame {
+    aspect-ratio: 1.75;
+  }
+
+  .mapAction {
+    right: 1rem;
+    bottom: 1rem;
+    left: auto;
+    min-width: 15.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mapTap:hover .pin,
+  .mapTap:focus-visible .pin {
+    box-shadow:
+      0 0.65rem 1.5rem rgb(42 7 20 / 55%),
+      0 0 0 0.55rem rgb(255 236 176 / 24%);
+  }
+
+  .mapTap:hover .mapAction,
+  .mapTap:focus-visible .mapAction {
+    transform: translateY(-2px);
+  }
+
+  .pin,
+  .mapAction {
+    transition:
+      box-shadow var(--duration-base) var(--ease-soft),
+      transform var(--duration-fast) var(--ease-soft);
+  }
+}

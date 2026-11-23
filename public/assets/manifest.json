@@ -1,0 +1,888 @@
+{
+  "generatedAt": null,
+  "assets": {
+    "ganesh-idol": {
+      "width": 1600,
+      "height": 2000,
+      "avif": [
+        {
+          "src": "/assets/ganesh/ganesh-idol-480w.avif",
+          "width": 480
+        },
+        {
+          "src": "/assets/ganesh/ganesh-idol-800w.avif",
+          "width": 800
+        },
+        {
+          "src": "/assets/ganesh/ganesh-idol.avif",
+          "width": 1600
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/ganesh/ganesh-idol-480w.webp",
+          "width": 480
+        },
+        {
+          "src": "/assets/ganesh/ganesh-idol-800w.webp",
+          "width": 800
+        },
+        {
+          "src": "/assets/ganesh/ganesh-idol.webp",
+          "width": 1600
+        }
+      ],
+      "fallback": "/assets/ganesh/ganesh-idol.webp"
+    },
+    "diya": {
+      "width": 600,
+      "height": 600,
+      "avif": [
+        {
+          "src": "/assets/ganesh/diya-160w.avif",
+          "width": 160
+        },
+        {
+          "src": "/assets/ganesh/diya-320w.avif",
+          "width": 320
+        },
+        {
+          "src": "/assets/ganesh/diya.avif",
+          "width": 600
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/ganesh/diya-160w.webp",
+          "width": 160
+        },
+        {
+          "src": "/assets/ganesh/diya-320w.webp",
+          "width": 320
+        },
+        {
+          "src": "/assets/ganesh/diya.webp",
+          "width": 600
+        }
+      ],
+      "fallback": "/assets/ganesh/diya.webp"
+    },
+    "door-left": {
+      "width": 1080,
+      "height": 2400,
+      "avif": [
+        {
+          "src": "/assets/palace/door-left-540w.avif",
+          "width": 540
+        },
+        {
+          "src": "/assets/palace/door-left.avif",
+          "width": 1080
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/palace/door-left-540w.webp",
+          "width": 540
+        },
+        {
+          "src": "/assets/palace/door-left.webp",
+          "width": 1080
+        }
+      ],
+      "fallback": "/assets/palace/door-left.webp"
+    },
+    "door-right": {
+      "width": 1080,
+      "height": 2400,
+      "avif": [
+        {
+          "src": "/assets/palace/door-right-540w.avif",
+          "width": 540
+        },
+        {
+          "src": "/assets/palace/door-right.avif",
+          "width": 1080
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/palace/door-right-540w.webp",
+          "width": 540
+        },
+        {
+          "src": "/assets/palace/door-right.webp",
+          "width": 1080
+        }
+      ],
+      "fallback": "/assets/palace/door-right.webp"
+    },
+    "corner-tl": {
+      "width": 1200,
+      "height": 1200,
+      "avif": [
+        {
+          "src": "/assets/florals/corner-tl-480w.avif",
+          "width": 480
+        },
+        {
+          "src": "/assets/florals/corner-tl-800w.avif",
+          "width": 800
+        },
+        {
+          "src": "/assets/florals/corner-tl.avif",
+          "width": 1200
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/florals/corner-tl-480w.webp",
+          "width": 480
+        },
+        {
+          "src": "/assets/florals/corner-tl-800w.webp",
+          "width": 800
+        },
+        {
+          "src": "/assets/florals/corner-tl.webp",
+          "width": 1200
+        }
+      ],
+      "fallback": "/assets/florals/corner-tl.webp"
+    },
+    "arch-frame": {
+      "width": 1200,
+      "height": 1800,
+      "avif": [
+        {
+          "src": "/assets/palace/arch-frame-480w.avif",
+          "width": 480
+        },
+        {
+          "src": "/assets/palace/arch-frame-800w.avif",
+          "width": 800
+        },
+        {
+          "src": "/assets/palace/arch-frame.avif",
+          "width": 1200
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/palace/arch-frame-480w.webp",
+          "width": 480
+        },
+        {
+          "src": "/assets/palace/arch-frame-800w.webp",
+          "width": 800
+        },
+        {
+          "src": "/assets/palace/arch-frame.webp",
+          "width": 1200
+        }
+      ],
+      "fallback": "/assets/palace/arch-frame.webp"
+    },
+    "toran": {
+      "width": 1800,
+      "height": 600,
+      "avif": [
+        {
+          "src": "/assets/florals/toran-600w.avif",
+          "width": 600
+        },
+        {
+          "src": "/assets/florals/toran-1200w.avif",
+          "width": 1200
+        },
+        {
+          "src": "/assets/florals/toran.avif",
+          "width": 1800
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/florals/toran-600w.webp",
+          "width": 600
+        },
+        {
+          "src": "/assets/florals/toran-1200w.webp",
+          "width": 1200
+        },
+        {
+          "src": "/assets/florals/toran.webp",
+          "width": 1800
+        }
+      ],
+      "fallback": "/assets/florals/toran.webp"
+    },
+    "petal": {
+      "width": 480,
+      "height": 320,
+      "avif": [
+        {
+          "src": "/assets/florals/petal-120w.avif",
+          "width": 120
+        },
+        {
+          "src": "/assets/florals/petal-240w.avif",
+          "width": 240
+        },
+        {
+          "src": "/assets/florals/petal.avif",
+          "width": 480
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/florals/petal-120w.webp",
+          "width": 120
+        },
+        {
+          "src": "/assets/florals/petal-240w.webp",
+          "width": 240
+        },
+        {
+          "src": "/assets/florals/petal.webp",
+          "width": 480
+        }
+      ],
+      "fallback": "/assets/florals/petal.webp"
+    },
+    "hero-portrait": {
+      "width": 1600,
+      "height": 2000,
+      "avif": [
+        {
+          "src": "/assets/couple/hero-portrait-480w.avif",
+          "width": 480
+        },
+        {
+          "src": "/assets/couple/hero-portrait-800w.avif",
+          "width": 800
+        },
+        {
+          "src": "/assets/couple/hero-portrait-1200w.avif",
+          "width": 1200
+        },
+        {
+          "src": "/assets/couple/hero-portrait.avif",
+          "width": 1600
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/couple/hero-portrait-480w.webp",
+          "width": 480
+        },
+        {
+          "src": "/assets/couple/hero-portrait-800w.webp",
+          "width": 800
+        },
+        {
+          "src": "/assets/couple/hero-portrait-1200w.webp",
+          "width": 1200
+        },
+        {
+          "src": "/assets/couple/hero-portrait.webp",
+          "width": 1600
+        }
+      ],
+      "fallback": "/assets/couple/hero-portrait.webp"
+    },
+    "album-moment-01": {
+      "width": 1200,
+      "height": 1800,
+      "avif": [
+        {
+          "src": "/assets/album/moment-01-320w.avif",
+          "width": 320
+        },
+        {
+          "src": "/assets/album/moment-01-640w.avif",
+          "width": 640
+        },
+        {
+          "src": "/assets/album/moment-01.avif",
+          "width": 1200
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/album/moment-01-320w.webp",
+          "width": 320
+        },
+        {
+          "src": "/assets/album/moment-01-640w.webp",
+          "width": 640
+        },
+        {
+          "src": "/assets/album/moment-01.webp",
+          "width": 1200
+        }
+      ],
+      "fallback": "/assets/album/moment-01.webp"
+    },
+    "album-moment-02": {
+      "width": 960,
+      "height": 1280,
+      "avif": [
+        {
+          "src": "/assets/album/moment-02-320w.avif",
+          "width": 320
+        },
+        {
+          "src": "/assets/album/moment-02-640w.avif",
+          "width": 640
+        },
+        {
+          "src": "/assets/album/moment-02.avif",
+          "width": 960
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/album/moment-02-320w.webp",
+          "width": 320
+        },
+        {
+          "src": "/assets/album/moment-02-640w.webp",
+          "width": 640
+        },
+        {
+          "src": "/assets/album/moment-02.webp",
+          "width": 960
+        }
+      ],
+      "fallback": "/assets/album/moment-02.webp"
+    },
+    "album-moment-03": {
+      "width": 1200,
+      "height": 1600,
+      "avif": [
+        {
+          "src": "/assets/album/moment-03-320w.avif",
+          "width": 320
+        },
+        {
+          "src": "/assets/album/moment-03-640w.avif",
+          "width": 640
+        },
+        {
+          "src": "/assets/album/moment-03.avif",
+          "width": 1200
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/album/moment-03-320w.webp",
+          "width": 320
+        },
+        {
+          "src": "/assets/album/moment-03-640w.webp",
+          "width": 640
+        },
+        {
+          "src": "/assets/album/moment-03.webp",
+          "width": 1200
+        }
+      ],
+      "fallback": "/assets/album/moment-03.webp"
+    },
+    "album-moment-04": {
+      "width": 1200,
+      "height": 1600,
+      "avif": [
+        {
+          "src": "/assets/album/moment-04-320w.avif",
+          "width": 320
+        },
+        {
+          "src": "/assets/album/moment-04-640w.avif",
+          "width": 640
+        },
+        {
+          "src": "/assets/album/moment-04.avif",
+          "width": 1200
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/album/moment-04-320w.webp",
+          "width": 320
+        },
+        {
+          "src": "/assets/album/moment-04-640w.webp",
+          "width": 640
+        },
+        {
+          "src": "/assets/album/moment-04.webp",
+          "width": 1200
+        }
+      ],
+      "fallback": "/assets/album/moment-04.webp"
+    },
+    "album-moment-05": {
+      "width": 1200,
+      "height": 1600,
+      "avif": [
+        {
+          "src": "/assets/album/moment-05-320w.avif",
+          "width": 320
+        },
+        {
+          "src": "/assets/album/moment-05-640w.avif",
+          "width": 640
+        },
+        {
+          "src": "/assets/album/moment-05.avif",
+          "width": 1200
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/album/moment-05-320w.webp",
+          "width": 320
+        },
+        {
+          "src": "/assets/album/moment-05-640w.webp",
+          "width": 640
+        },
+        {
+          "src": "/assets/album/moment-05.webp",
+          "width": 1200
+        }
+      ],
+      "fallback": "/assets/album/moment-05.webp"
+    },
+    "album-final-mountain": {
+      "width": 576,
+      "height": 1280,
+      "avif": [
+        {
+          "src": "/assets/album/final-mountain-320w.avif",
+          "width": 320
+        },
+        {
+          "src": "/assets/album/final-mountain-640w.avif",
+          "width": 576
+        },
+        {
+          "src": "/assets/album/final-mountain.avif",
+          "width": 576
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/album/final-mountain-320w.webp",
+          "width": 320
+        },
+        {
+          "src": "/assets/album/final-mountain-640w.webp",
+          "width": 576
+        },
+        {
+          "src": "/assets/album/final-mountain.webp",
+          "width": 576
+        }
+      ],
+      "fallback": "/assets/album/final-mountain.webp"
+    },
+    "album-final-evening": {
+      "width": 960,
+      "height": 1280,
+      "avif": [
+        {
+          "src": "/assets/album/final-evening-320w.avif",
+          "width": 320
+        },
+        {
+          "src": "/assets/album/final-evening-640w.avif",
+          "width": 640
+        },
+        {
+          "src": "/assets/album/final-evening.avif",
+          "width": 960
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/album/final-evening-320w.webp",
+          "width": 320
+        },
+        {
+          "src": "/assets/album/final-evening-640w.webp",
+          "width": 640
+        },
+        {
+          "src": "/assets/album/final-evening.webp",
+          "width": 960
+        }
+      ],
+      "fallback": "/assets/album/final-evening.webp"
+    },
+    "album-final-cake": {
+      "width": 1200,
+      "height": 900,
+      "avif": [
+        {
+          "src": "/assets/album/final-cake-320w.avif",
+          "width": 320
+        },
+        {
+          "src": "/assets/album/final-cake-640w.avif",
+          "width": 640
+        },
+        {
+          "src": "/assets/album/final-cake.avif",
+          "width": 1200
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/album/final-cake-320w.webp",
+          "width": 320
+        },
+        {
+          "src": "/assets/album/final-cake-640w.webp",
+          "width": 640
+        },
+        {
+          "src": "/assets/album/final-cake.webp",
+          "width": 1200
+        }
+      ],
+      "fallback": "/assets/album/final-cake.webp"
+    },
+    "album-final-celebration": {
+      "width": 1200,
+      "height": 799,
+      "avif": [
+        {
+          "src": "/assets/album/final-celebration-320w.avif",
+          "width": 320
+        },
+        {
+          "src": "/assets/album/final-celebration-640w.avif",
+          "width": 640
+        },
+        {
+          "src": "/assets/album/final-celebration.avif",
+          "width": 1200
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/album/final-celebration-320w.webp",
+          "width": 320
+        },
+        {
+          "src": "/assets/album/final-celebration-640w.webp",
+          "width": 640
+        },
+        {
+          "src": "/assets/album/final-celebration.webp",
+          "width": 1200
+        }
+      ],
+      "fallback": "/assets/album/final-celebration.webp"
+    },
+    "album-final-dance": {
+      "width": 853,
+      "height": 1280,
+      "avif": [
+        {
+          "src": "/assets/album/final-dance-320w.avif",
+          "width": 320
+        },
+        {
+          "src": "/assets/album/final-dance-640w.avif",
+          "width": 640
+        },
+        {
+          "src": "/assets/album/final-dance.avif",
+          "width": 853
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/album/final-dance-320w.webp",
+          "width": 320
+        },
+        {
+          "src": "/assets/album/final-dance-640w.webp",
+          "width": 640
+        },
+        {
+          "src": "/assets/album/final-dance.webp",
+          "width": 853
+        }
+      ],
+      "fallback": "/assets/album/final-dance.webp"
+    },
+    "album-final-formal": {
+      "width": 720,
+      "height": 1280,
+      "avif": [
+        {
+          "src": "/assets/album/final-formal-320w.avif",
+          "width": 320
+        },
+        {
+          "src": "/assets/album/final-formal-640w.avif",
+          "width": 640
+        },
+        {
+          "src": "/assets/album/final-formal.avif",
+          "width": 720
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/album/final-formal-320w.webp",
+          "width": 320
+        },
+        {
+          "src": "/assets/album/final-formal-640w.webp",
+          "width": 640
+        },
+        {
+          "src": "/assets/album/final-formal.webp",
+          "width": 720
+        }
+      ],
+      "fallback": "/assets/album/final-formal.webp"
+    },
+    "portrait-jharokha": {
+      "width": 1200,
+      "height": 1500,
+      "avif": [
+        {
+          "src": "/assets/palace/portrait-jharokha-480w.avif",
+          "width": 480
+        },
+        {
+          "src": "/assets/palace/portrait-jharokha-800w.avif",
+          "width": 800
+        },
+        {
+          "src": "/assets/palace/portrait-jharokha.avif",
+          "width": 1200
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/palace/portrait-jharokha-480w.webp",
+          "width": 480
+        },
+        {
+          "src": "/assets/palace/portrait-jharokha-800w.webp",
+          "width": 800
+        },
+        {
+          "src": "/assets/palace/portrait-jharokha.webp",
+          "width": 1200
+        }
+      ],
+      "fallback": "/assets/palace/portrait-jharokha.webp"
+    },
+    "hero-side-string": {
+      "width": 400,
+      "height": 1600,
+      "avif": [
+        {
+          "src": "/assets/florals/hero-side-string-160w.avif",
+          "width": 160
+        },
+        {
+          "src": "/assets/florals/hero-side-string-240w.avif",
+          "width": 240
+        },
+        {
+          "src": "/assets/florals/hero-side-string.avif",
+          "width": 400
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/florals/hero-side-string-160w.webp",
+          "width": 160
+        },
+        {
+          "src": "/assets/florals/hero-side-string-240w.webp",
+          "width": 240
+        },
+        {
+          "src": "/assets/florals/hero-side-string.webp",
+          "width": 400
+        }
+      ],
+      "fallback": "/assets/florals/hero-side-string.webp"
+    },
+    "ceremony-haldi": {
+      "width": 1200,
+      "height": 900,
+      "avif": [
+        {
+          "src": "/assets/ceremonies/haldi-320w.avif",
+          "width": 320
+        },
+        {
+          "src": "/assets/ceremonies/haldi-640w.avif",
+          "width": 640
+        },
+        {
+          "src": "/assets/ceremonies/haldi.avif",
+          "width": 1200
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/ceremonies/haldi-320w.webp",
+          "width": 320
+        },
+        {
+          "src": "/assets/ceremonies/haldi-640w.webp",
+          "width": 640
+        },
+        {
+          "src": "/assets/ceremonies/haldi.webp",
+          "width": 1200
+        }
+      ],
+      "fallback": "/assets/ceremonies/haldi.webp"
+    },
+    "ceremony-mehendi-sangeet": {
+      "width": 1200,
+      "height": 900,
+      "avif": [
+        {
+          "src": "/assets/ceremonies/mehendi-sangeet-320w.avif",
+          "width": 320
+        },
+        {
+          "src": "/assets/ceremonies/mehendi-sangeet-640w.avif",
+          "width": 640
+        },
+        {
+          "src": "/assets/ceremonies/mehendi-sangeet.avif",
+          "width": 1200
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/ceremonies/mehendi-sangeet-320w.webp",
+          "width": 320
+        },
+        {
+          "src": "/assets/ceremonies/mehendi-sangeet-640w.webp",
+          "width": 640
+        },
+        {
+          "src": "/assets/ceremonies/mehendi-sangeet.webp",
+          "width": 1200
+        }
+      ],
+      "fallback": "/assets/ceremonies/mehendi-sangeet.webp"
+    },
+    "ceremony-wedding-mandap": {
+      "width": 1200,
+      "height": 900,
+      "avif": [
+        {
+          "src": "/assets/ceremonies/wedding-mandap-320w.avif",
+          "width": 320
+        },
+        {
+          "src": "/assets/ceremonies/wedding-mandap-640w.avif",
+          "width": 640
+        },
+        {
+          "src": "/assets/ceremonies/wedding-mandap.avif",
+          "width": 1200
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/ceremonies/wedding-mandap-320w.webp",
+          "width": 320
+        },
+        {
+          "src": "/assets/ceremonies/wedding-mandap-640w.webp",
+          "width": 640
+        },
+        {
+          "src": "/assets/ceremonies/wedding-mandap.webp",
+          "width": 1200
+        }
+      ],
+      "fallback": "/assets/ceremonies/wedding-mandap.webp"
+    },
+    "royal-scroll-roller": {
+      "width": 1200,
+      "height": 171,
+      "avif": [
+        {
+          "src": "/assets/scroll/royal-roller-480w.avif",
+          "width": 480
+        },
+        {
+          "src": "/assets/scroll/royal-roller-800w.avif",
+          "width": 800
+        },
+        {
+          "src": "/assets/scroll/royal-roller.avif",
+          "width": 1200
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/scroll/royal-roller-480w.webp",
+          "width": 480
+        },
+        {
+          "src": "/assets/scroll/royal-roller-800w.webp",
+          "width": 800
+        },
+        {
+          "src": "/assets/scroll/royal-roller.webp",
+          "width": 1200
+        }
+      ],
+      "fallback": "/assets/scroll/royal-roller.webp"
+    },
+    "royal-farman-border": {
+      "width": 1024,
+      "height": 1536,
+      "avif": [
+        {
+          "src": "/assets/scroll/royal-farman-border-480w.avif",
+          "width": 480
+        },
+        {
+          "src": "/assets/scroll/royal-farman-border-800w.avif",
+          "width": 800
+        },
+        {
+          "src": "/assets/scroll/royal-farman-border.avif",
+          "width": 1024
+        }
+      ],
+      "webp": [
+        {
+          "src": "/assets/scroll/royal-farman-border-480w.webp",
+          "width": 480
+        },
+        {
+          "src": "/assets/scroll/royal-farman-border-800w.webp",
+          "width": 800
+        },
+        {
+          "src": "/assets/scroll/royal-farman-border.webp",
+          "width": 1024
+        }
+      ],
+      "fallback": "/assets/scroll/royal-farman-border.webp"
+    }
+  }
+}
